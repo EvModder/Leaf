@@ -1,0 +1,34 @@
+anti-spam: false
+anti-caps: true
+spam-result-command: "kick %name% §cReceived TMC/TMS from client\\n§fEither lag or spam... :P"
+max-chats-per-minute: 35
+max-chats-per-10s: 15
+max-chats-per-second: 4
+
+set-nickname-when-setting-color: true
+use-player-displaynames: true
+item-hover-display: true
+item-replacement: "[i]" #todo: not currently used
+sanitize-chat: true
+sanitize-signs: true
+sanitize-commands: true
+sanitize-commands-start-argument: 2
+filth-result-command: ""
+
+# Warning: the following configuration option can cause harmless
+# words to be blocked if their reversed spelling matches a bad word.
+check-badwords-backwards: false
+
+default-badword-replacement: "*"
+
+# It is generally good to disable these if you have another plugin
+# that handles sign/chat color (such as EssentialsChat)
+chat-colors: true
+chat-formats: true
+sign-colors: true
+sign-formats: true
+
+# Automatically update the plugin
+update-plugin: true
+
+plugin-message-prefix: "&3<&aC&3>&f "

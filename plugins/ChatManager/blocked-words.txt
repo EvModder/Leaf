@@ -1,0 +1,16 @@
+thisisabadword,badword248,a@@ , word45 ,CRAPS**T,lolbutts,LMFAO=haha,flycoder=qua-112
+
+# Spaces are fine to use, but please realize that 
+# they will be counted as a part of a word.
+#
+# To set a custom replacement (sub) for a bad word, simply use
+# '='
+# For example, to have "hell" replaced with "nether", write it
+# like this:
+# thisisabadword,hell=nether,ass=donkey,f***=meep,a@@,etc..
+#
+# If you want to allow a word on the 'Default blocked list',
+# Then put it in like this: hell=hell,crap=crap,
+# What this does is simply "replace" the badword with itself
+# (Note that you can also open/unzip the .jar file and directly
+# edit the default list there)
