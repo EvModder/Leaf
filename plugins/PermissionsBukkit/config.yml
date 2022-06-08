@@ -11,14 +11,32 @@ users:
   2e48d5f1-fb0e-4048-8468-0738a3ec07b8:
     groups:
     - admin
+    name: KlayADR
 
 groups:
   default:
     permissions:
       permissions.build: true
+      essentials.home: true
+      essentials.home.bed: true
+      essentials.sethome.bed: true
+      essentials.chat.url: true
+      essentials.help: true
+      essentials.kick.notify: true
+      essentials.msg.url: true
+      essentials.mute.notify: true
+      essentials.rules: true
+      essentials.signs.use.*: true
+      essentials.signs.color: true
+      essentials.signs.format: true
+      worldedit.calc: true
+      permissions.check: true
+      permissions.info: true
+      aztectabcompleter.group.default: true
   admin:
     permissions:
       mv.bypass.gamemode.*: true
+      chatmanager.command.color.custom: true
     inheritance:
     - default
 

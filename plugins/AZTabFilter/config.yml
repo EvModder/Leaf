@@ -1,0 +1,30 @@
+# default behavior when no filters match the command
+filter-default: ALLOW_FINAL
+
+kick-early-joins: false
+kick-message: Please wait a moment for the server to load!
+
+
+# tab suggestions visible by whitelist for the default group
+visible-commands:
+
+
+# tab suggestions invisible by blacklist for the default group
+# by default, this overrides visible-commands and group visibility
+invisible-commands:
+  - execute
+  - testfor
+  - particle
+  -
+
+groups:
+  chatmod:
+    visible-commands:
+      - mute
+    invisible-commands:
+      - something
+  moderator:
+    visible-commands:
+      - tp
+    invisible-commands:
+      - somethingelse

@@ -5,7 +5,7 @@ max-chats-per-minute: 35
 max-chats-per-10s: 15
 max-chats-per-second: 4
 
-set-nickname-when-setting-color: true
+set-nickname-when-setting-color: false
 use-player-displaynames: true
 item-hover-display: true
 item-replacement: "[i]" #todo: not currently used
