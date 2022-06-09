@@ -4,5 +4,11 @@
     "name": "EvDoc",
     "level": 4,
     "bypassesPlayerLimit": true
+  },
+  {
+    "uuid": "2e48d5f1-fb0e-4048-8468-0738a3ec07b8",
+    "name": "KlayADR",
+    "level": 1,
+    "bypassesPlayerLimit": false
   }
 ]

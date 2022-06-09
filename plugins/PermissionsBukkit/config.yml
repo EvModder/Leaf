@@ -35,6 +35,7 @@ groups:
       aztectabcompleter.group.default: true
   admin:
     permissions:
+      essentials.fly.safelogin: false
       mv.bypass.gamemode.*: true
       chatmanager.command.color.custom: true
     inheritance:

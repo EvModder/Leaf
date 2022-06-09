@@ -1,0 +1,1 @@
+1654698581340,mob decapitated,Pig,SkySwordMc,[item.minecraft.stone_sword]
