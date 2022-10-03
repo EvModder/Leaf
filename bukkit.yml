@@ -1,5 +1,6 @@
 settings:
-  allow-end: false
+  use-map-color-cache: true
+  allow-end: true
   warn-on-overload: true
   permissions-file: logs/permissions.yml
   update-folder: ../logs/update

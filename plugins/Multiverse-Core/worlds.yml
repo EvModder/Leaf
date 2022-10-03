@@ -27,10 +27,10 @@ worlds:
       amount: '0.0'
     hunger: 'true'
     autoHeal: 'true'
-    adjustSpawn: 'true'
+    adjustSpawn: 'false'
     portalForm: ALL
     gameMode: SURVIVAL
-    keepSpawnInMemory: 'true'
+    keepSpawnInMemory: 'false'
     spawnLocation:
       ==: MVSpawnLocation
       x: 16.0
@@ -38,7 +38,7 @@ worlds:
       z: 4.0
       pitch: 0.0
       yaw: 0.0
-    autoLoad: 'true'
+    autoLoad: 'false'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NETHER
@@ -46,10 +46,57 @@ worlds:
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
-  MySwamp:
+  MySwamp_the_end:
     ==: MVWorld
     hidden: 'false'
     alias: ''
+    color: WHITE
+    style: NORMAL
+    pvp: 'true'
+    scale: '16.0'
+    respawnWorld: ''
+    allowWeather: 'true'
+    difficulty: HARD
+    spawning:
+      ==: MVSpawnSettings
+      animals:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+      monsters:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+    entryfee:
+      ==: MVEntryFee
+      amount: '0.0'
+    hunger: 'true'
+    autoHeal: 'true'
+    adjustSpawn: 'false'
+    portalForm: ALL
+    gameMode: SURVIVAL
+    keepSpawnInMemory: 'false'
+    spawnLocation:
+      ==: MVSpawnLocation
+      x: 0.0
+      y: 59.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+    autoLoad: 'false'
+    bedRespawn: 'true'
+    worldBlacklist: []
+    environment: THE_END
+    seed: '654585152'
+    generator: 'null'
+    playerLimit: '-1'
+    allowFlight: 'true'
+  MySwamp:
+    ==: MVWorld
+    hidden: 'false'
+    alias: MySwamp
     color: WHITE
     style: NORMAL
     pvp: 'true'
@@ -121,7 +168,7 @@ worlds:
       amount: '0.0'
     hunger: 'true'
     autoHeal: 'false'
-    adjustSpawn: 'true'
+    adjustSpawn: 'false'
     portalForm: ALL
     gameMode: ADVENTURE
     keepSpawnInMemory: 'false'

@@ -21,12 +21,20 @@ dab:
   activation-dist-mod: 8
   blacklisted-entities: []
 inactive-goal-selector-throttle: false
-# Configures Flare, the built-in profiler
 flare:
   url: https://flare.airplane.gg
-# Options for connecting to Pufferfish/Airplane's online utilities
 web-services:
   token: ''
 # Settings for things that don't belong elsewhere
 misc:
   disable-method-profiler: true
+  disable-out-of-order-chat: false
+# These values define a entity's maximum lifespan. If an
+# entity is in this list and it has survived for longer than
+# that number of ticks, then it will be removed. Setting a value to
+# -1 disables this feature.
+entity_timeouts:
+  SNOWBALL: -1
+  LLAMA_SPIT: -1
+enable-async-entity-tracker: false
+enable-async-pathfinding: false

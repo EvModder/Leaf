@@ -9,7 +9,7 @@ multiverse-configuration:
   displaypermerrors: 'true'
   enablebuscript: 'false'
   globaldebug: '0'
-  silentstart: 'false'
+  silentstart: 'true'
   messagecooldown: '5000'
   version: '2.9'
   firstspawnworld: MySwamp
@@ -17,4 +17,4 @@ multiverse-configuration:
   defaultportalsearch: 'true'
   portalsearchradius: '128'
   autopurge: 'true'
-  idonotwanttodonate: 'false'
+  idonotwanttodonate: 'true'

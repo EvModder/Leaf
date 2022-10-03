@@ -1,0 +1,36 @@
+# Scoreboard objectives to update when a player changes their name.
+# Key is the name of an objective, value (after colon) is the transfer mode
+#OVERWRITE: replaces scores for 'newname' with the scores from 'oldname'
+#SAFE_MOVE: same as above, but throws an error if 'newname' is already defined
+#ADD: merges old score with any existing score for 'newname'
+#NONE: does nothing
+
+uuid-based-scores:
+  istats-anvil: NONE
+  istats-cactus: NONE
+  istats-despawn: NONE
+  istats-explosion: NONE
+  istats-fire: NONE
+  istats-lava: NONE
+  istats-lightning: NONE
+  istats-void: NONE
+  horse-health: NONE
+  horse-jump: NONE
+  horse-speed: NONE
+  donkey-health: NONE
+  donkey-jump: NONE
+  donkey-speed: NONE
+  mule-health: NONE
+  mule-jump: NONE
+  mule-speed: NONE
+  llama-health: NONE
+  llama-jump: NONE
+  llama-speed: NONE
+  skeleton_horse-jump: NONE
+  trader_llama-health: NONE
+
+# What mode to use when a scoreboard is not explicitly listed in 'uuid-based-scores'
+default-mode: SAFE_MOVE
+
+# Whether to delete old scoreboard entries when a player changes their name (after moving scores)
+reset-old-scores: true

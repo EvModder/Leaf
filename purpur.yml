@@ -10,8 +10,12 @@
 
 verbose: false
 settings:
-  use-alternate-keepalive: false
+  fix-projectile-looting-transfer: false
+  blast-resistance-overrides: {}
+  use-alternate-keepalive: true
   messages:
+    ram-command-output: '<green>Ram Usage: <used>/<xmx> (<percent>)'
+    rambar-command-output: <green>Rambar toggled <onoff> for <target>
     death-message:
       stonecutter: <player> has sawed themself in half
       run-with-scissors: <player> slipped and fell on their shears
@@ -40,6 +44,18 @@ settings:
       mineshaft: -1
   lagging-threshold: 19.0
   command:
+    rambar:
+      title: <gray>Ram<yellow>:</yellow> <used>/<xmx> (<percent>)
+      overlay: NOTCHED_20
+      progress-color:
+        good: GREEN
+        medium: YELLOW
+        low: RED
+      text-color:
+        good: <gradient:#55ff55:#00aa00><text></gradient>
+        medium: <gradient:#ffff55:#ffaa00><text></gradient>
+        low: <gradient:#ff5555:#aa0000><text></gradient>
+      tick-interval: 20
     tpsbar:
       title: <gray>TPS<yellow>:</yellow> <tps> MSPT<yellow>:</yellow> <mspt> Ping<yellow>:</yellow>
         <ping>ms
@@ -63,7 +79,7 @@ settings:
     gamemode:
       requires-specific-permission: false
     fill:
-      max-area: 32768
+      max-area: 1000000
     hide-hidden-players-from-entity-selector: false
     uptime:
       format: <days><hours><minutes><seconds>
@@ -76,6 +92,14 @@ settings:
       second: '%02d second'
       seconds: '%02d seconds'
   blocks:
+    cave_vines:
+      max-growth-age: 25
+    kelp:
+      max-growth-age: 25
+    twisting_vines:
+      max-growth-age: 25
+    weeping_vines:
+      max-growth-age: 25
     barrel:
       rows: 3
     ender_chest:
@@ -102,30 +126,45 @@ settings:
     allow-infinity-and-mending-together: false
     allow-infinity-on-crossbow: false
     allow-looting-on-shears: false
-    allow-unsafe-enchants: false
-    allow-unsafe-enchant-command: false
+    allow-unsafe-enchant-command: true
     clamp-levels: false
+    anvil:
+      allow-unsafe-enchants: false
+      allow-inapplicable-enchants: true
+      allow-incompatible-enchants: true
+      allow-higher-enchants-levels: true
   entity:
     enderman:
       short-height: false
   allow-water-placement-in-the-end: true
   network:
+    kick-for-out-of-order-chat: true
     upnp-port-forwarding: false
     max-joins-per-second: false
   username-valid-characters: ^[a-zA-Z0-9_.]*$
   food-properties: {}
   disable-give-dropping: false
   logger:
+    suppress-sent-expired-chat: false
     suppress-init-legacy-material-errors: false
     suppress-ignored-advancement-warnings: false
     suppress-unrecognized-recipe-errors: false
     suppress-setblock-in-far-chunk-errors: false
   tps-catchup: true
   server-mod-name: Speegot
-config-version: 27
+config-version: 30
 world-settings:
   default:
+    settings:
+      entity:
+        shared-random: true
     blocks:
+      coral:
+        die-outside-water: true
+      sculk_shrieker:
+        can-summon-default: false
+      enchantment-table:
+        lapis-persists: false
       twisting_vines:
         max-growth-age: 25
       observer:
@@ -227,10 +266,11 @@ world-settings:
       sand:
         fix-duping: false
       shulker_box:
-        allow-oversized-stacks: true
+        # todo: revisit this
+        allow-oversized-stacks: false
       sign:
         right-click-edit: false
-        allow-colors: false
+        allow-colors: true
       slab:
         break-individual-slabs-when-sneaking: false
       spawner:
@@ -238,6 +278,7 @@ world-settings:
         fix-mc-238526: false
       sponge:
         absorption:
+          # todo: test this
           area: 64
           radius: 6
         absorbs-lava: false
@@ -272,6 +313,25 @@ world-settings:
           dripstone-water: 0.17578125
           dripstone-lava: 0.05859375
     mobs:
+      allay:
+        respect-nbt: []
+        ridable: false
+        ridable-in-water: false
+        controllable: true
+      frog:
+        ridable: false
+        ridable-in-water: false
+        controllable: true
+        ridable-jump-height: 0.6499999761581421
+        breeding-delay-ticks: 6000
+      tadpole:
+        ridable: false
+        ridable-in-water: false
+        controllable: true
+      warden:
+        ridable: false
+        ridable-in-water: false
+        controllable: true
       enderman:
         ridable: false
         ridable-in-water: false
@@ -565,6 +625,7 @@ world-settings:
         takes-damage-from-water: false
         always-drop-exp: false
       glow_squid:
+        rainglow-mode: rainbow
         ridable: false
         controllable: true
         attributes:
@@ -847,6 +908,8 @@ world-settings:
         takes-damage-from-water: false
         always-drop-exp: false
       skeleton:
+        bow-accuracy: 14 - difficulty * 4
+        feed-wither-roses: 0
         ridable: false
         ridable-in-water: false
         controllable: true
@@ -1176,6 +1239,12 @@ world-settings:
           minecraft:jungle_log:
             drops: {}
             into: minecraft:stripped_jungle_log
+          minecraft:mangrove_log:
+            into: minecraft:stripped_mangrove_log
+            drops: {}
+          minecraft:mangrove_wood:
+            into: minecraft:stripped_mangrove_wood
+            drops: {}
         waxables:
           minecraft:waxed_oxidized_cut_copper_stairs:
             drops: {}
@@ -1294,6 +1363,8 @@ world-settings:
     hunger:
       starvation-damage: 1.0
     gameplay-mechanics:
+      arrow:
+        movement-resets-despawn-counter: true
       entity-lifespan: 0
       entity-left-handed-chance: 0.05000000074505806
       armorstand:
@@ -1383,6 +1454,7 @@ world-settings:
         hunger-exhaustion-amount: 0.004999999888241291
         saturation-regen-amount: 1.0
       mob-spawning:
+        ignore-creative-players: false
         village-cats: default
         raid-patrols: default
         phantoms: default
@@ -1396,10 +1468,10 @@ world-settings:
           show-particles: false
           show-icon: true
         idle-timeout:
-          kick-if-idle: true
+          kick-if-idle: false
           tick-nearby-entities: true
           count-as-sleeping: false
-          update-tab-list: false
+          update-tab-list: true
           mobs-target: true
         spawn-invulnerable-ticks: 60
         invulnerable-while-accepting-resource-pack: false
@@ -1425,20 +1497,6 @@ world-settings:
         allow-void-trading: true
       projectile-damage:
         snowball: -1
-      projectile-despawn-rates:
-        dragon_fireball: -1
-        egg: -1
-        ender_pearl: -1
-        experience_bottle: -1
-        firework_rocket: -1
-        fishing_bobber: -1
-        fireball: -1
-        llama_spit: -1
-        potion: -1
-        shulker_bullet: -1
-        small_fireball: -1
-        snowball: -1
-        wither_skull: -1
       projectile-offset:
         bow: 1.0
         crossbow: 1.0

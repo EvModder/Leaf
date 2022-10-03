@@ -1,38 +1,129 @@
+hide-namespaced-commands-in-tab-complete: true
+hide-commands-with-null-permission: true
+hide-command-aliases-in-tab-complete: false
+hide-specific-commands:
+- icanhasbukkit
+- permissions
+- teammsg
+- tm
+- pl
+- homes
+- ;
+- /br
+- br
+- /brush
+- brush
+- /calculate
+- calculate
+- /desel
+- desel
+- /deselect
+- deselect
+- /evaluate
+- evaluate
+- /sel
+- sel
+- /toggleplace
+- toggleplace
+- none
+- tool
+- we
+- worldedit
+#aliases to hide
+- action
+- eaction
+- describe
+- edescribe
+- eme
+- emsg
+- erules
+- ehome
+- ehomes
+- epm
+- etell
+- ewhisper
+- eecho
+- eping
+- epong
+- stats
+- statistics
+- message
+- votes
+- fabric-command-api-v2:client
+- fcc
+
+
 users:
   34471e8d-d0c5-47b9-b8e1-b5b9472affa4:
     permissions:
-      mv.bypass.gamemode.*: true
+      eventials.sneakjoin: true
     groups:
     - admin
     name: EvDoc
-  2c7bf11d-29ea-4f2b-ab34-e51b18a7f5bd:
-    groups:
-    - admin
   2e48d5f1-fb0e-4048-8468-0738a3ec07b8:
     groups:
     - admin
     name: KlayADR
+  3b106625-11f8-458b-b321-dfca01799cf9:
+    groups:
+    - default
+    worlds:
+      MySwamp:
+        chatmanager.color.*: false
+    name: Anuvin
+    permissions:
+      essentials.help: false
+  ab63bc98-d805-41c3-b33b-8c46571f9ee2:
+    permissions:
+      chatmanager.command.color.custom: true
+    name: KingSteamRoller
+  0c685f6f-79a1-4d39-9426-c3ab99c7117d:
+    permissions:
+      worldedit.*: true
+    name: Elezzar
 
 groups:
   default:
     permissions:
-      permissions.build: true
+      minecraft.debugstick: true
+      minecraft.command.teammsg: false
+      minecraft.command.help: false
+      minecraft.command.me: false
+      minecraft.command.msg: false
+      bukkit.command.version: false
+      bukkit.command.plugins: true
+      bukkit.command.help: false
+      essentials.discord.receive.primary: true
       essentials.home: true
       essentials.home.bed: true
       essentials.sethome.bed: true
       essentials.chat.url: true
       essentials.help: true
       essentials.kick.notify: true
+      essentials.msg: true
       essentials.msg.url: true
       essentials.mute.notify: true
+      essentials.me: true
+      essentials.ping: true
       essentials.rules: true
       essentials.signs.use.*: true
       essentials.signs.color: true
       essentials.signs.format: true
       worldedit.calc: true
+      permissions.about: true
       permissions.check: true
+      permissions.dump: true
       permissions.info: true
-      aztectabcompleter.group.default: true
+      permissions.help: true
+      eventials.mailbox: false
+      eventials.moneyorder: false
+      eventials.advertise: false
+      eventials.deposit: false
+      eventials.donateserver: false
+      eventials.donatetop: false
+      eventials.books.sign: false
+      eventials.books.unsign: false
+      eventials.withdraw: false
   admin:
     permissions:
       essentials.fly.safelogin: false
