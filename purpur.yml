@@ -10,6 +10,41 @@
 
 verbose: false
 settings:
+  block-fall-multipliers:
+    minecraft:light_gray_bed:
+      distance: 0.5
+    minecraft:magenta_bed:
+      distance: 0.5
+    minecraft:purple_bed:
+      distance: 0.5
+    minecraft:light_blue_bed:
+      distance: 0.5
+    minecraft:pink_bed:
+      distance: 0.5
+    minecraft:red_bed:
+      distance: 0.5
+    minecraft:hay_block:
+      damage: 0.2
+    minecraft:white_bed:
+      distance: 0.5
+    minecraft:gray_bed:
+      distance: 0.5
+    minecraft:cyan_bed:
+      distance: 0.5
+    minecraft:blue_bed:
+      distance: 0.5
+    minecraft:green_bed:
+      distance: 0.5
+    minecraft:orange_bed:
+      distance: 0.5
+    minecraft:black_bed:
+      distance: 0.5
+    minecraft:yellow_bed:
+      distance: 0.5
+    minecraft:lime_bed:
+      distance: 0.5
+    minecraft:brown_bed:
+      distance: 0.5
   fix-projectile-looting-transfer: false
   blast-resistance-overrides: {}
   use-alternate-keepalive: true
@@ -123,6 +158,7 @@ settings:
     disable-note-block-updates: false
     disable-chorus-plant-updates: false
   enchantment:
+    allow-transparent-blocks-in-enchantment-box: false
     allow-infinity-and-mending-together: false
     allow-infinity-on-crossbow: false
     allow-looting-on-shears: false
@@ -145,6 +181,7 @@ settings:
   food-properties: {}
   disable-give-dropping: false
   logger:
+    suppress-library-loader: false
     suppress-sent-expired-chat: false
     suppress-init-legacy-material-errors: false
     suppress-ignored-advancement-warnings: false
@@ -170,6 +207,7 @@ world-settings:
       observer:
         disable-clock: false
       anvil:
+        use-mini-message: false
         allow-colors: false
         iron-ingots-used-for-repair: 0
         obsidian-used-for-damage: 0
@@ -500,6 +538,7 @@ world-settings:
           damage: 2.0
         always-drop-exp: false
       creeper:
+        encircle-target: false
         ridable: false
         ridable-in-water: false
         controllable: true
@@ -1363,6 +1402,7 @@ world-settings:
     hunger:
       starvation-damage: 1.0
     gameplay-mechanics:
+      milk-clears-beneficial-effects: true
       arrow:
         movement-resets-despawn-counter: true
       entity-lifespan: 0
@@ -1461,6 +1501,7 @@ world-settings:
         wandering-traders: default
         village-sieges: default
       player:
+        burp-delay: 10
         netherite-fire-resistance:
           duration: 0
           amplifier: 0
