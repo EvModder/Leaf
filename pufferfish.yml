@@ -10,8 +10,8 @@ enable-suffocation-optimization: false
 enable-async-mob-spawning: false
 # Optimizes projectile settings
 projectile:
-  max-loads-per-tick: 100
-  max-loads-per-projectile: 100
+  max-loads-per-tick: 10000
+  max-loads-per-projectile: 10000
 # Optimizes entity brains when
 # they're far away from the player
 dab:
