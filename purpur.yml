@@ -189,7 +189,7 @@ settings:
     suppress-setblock-in-far-chunk-errors: false
   tps-catchup: true
   server-mod-name: Speegot
-config-version: 30
+config-version: 31
 world-settings:
   default:
     settings:
@@ -224,7 +224,7 @@ world-settings:
         explode-on-villager-sleep: false
         explosion-power: 5.0
         explosion-fire: true
-        explosion-effect: DESTROY
+        explosion-effect: BLOCK
       big_dripleaf:
         tilt-delay:
           FULL: 100
@@ -250,16 +250,17 @@ world-settings:
       dragon_egg:
         teleport: true
       end-crystal:
+        cramming-amount: 0
         baseless:
           explode: true
           explosion-power: 6.0
           explosion-fire: false
-          explosion-effect: DESTROY
+          explosion-effect: BLOCK
         base:
           explode: true
           explosion-power: 6.0
           explosion-fire: false
-          explosion-effect: DESTROY
+          explosion-effect: BLOCK
       farmland:
         bypass-mob-griefing: false
         gets-moist-from-below: false
@@ -300,7 +301,7 @@ world-settings:
         explode: true
         explosion-power: 5.0
         explosion-fire: true
-        explosion-effect: DESTROY
+        explosion-effect: BLOCK
       sand:
         fix-duping: false
       shulker_box:
@@ -351,6 +352,8 @@ world-settings:
           dripstone-water: 0.17578125
           dripstone-lava: 0.05859375
     mobs:
+      camel:
+        breeding-delay-ticks: 6000
       allay:
         respect-nbt: []
         ridable: false
@@ -838,6 +841,7 @@ world-settings:
         takes-damage-from-water: false
         always-drop-exp: false
       piglin:
+        head-visibility-percent: 0.5
         ridable: false
         ridable-in-water: false
         controllable: true
@@ -1501,6 +1505,7 @@ world-settings:
         wandering-traders: default
         village-sieges: default
       player:
+        teleport-on-nether-ceiling-damage: false
         burp-delay: 10
         netherite-fire-resistance:
           duration: 0

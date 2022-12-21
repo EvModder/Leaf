@@ -51,6 +51,7 @@ anticheat:
     items:
       hide-durability: false
       hide-itemmeta: false
+      hide-itemmeta-with-visual-effects: false
 chunks:
   auto-save-interval: default
   delay-chunk-unloads-by: 10s
@@ -100,6 +101,8 @@ entities:
     parrots-are-unaffected-by-player-movement: false
     phantoms-do-not-spawn-on-creative-players: true
     phantoms-only-attack-insomniacs: false
+    phantoms-spawn-attempt-max-seconds: 119
+    phantoms-spawn-attempt-min-seconds: 60
     piglins-guard-chests: true
     pillager-patrols:
       disable: false
@@ -110,6 +113,7 @@ entities:
       start:
         day: 5
         per-player: false
+    player-insomnia-start-ticks: 72000
     should-remove-dragon: false
     spawner-nerfed-mobs-should-jump: false
     zombie-villager-infection-chance: -1.0
