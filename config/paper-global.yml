@@ -24,8 +24,8 @@ chunk-loading:
   max-concurrent-sends: 2
   min-load-radius: 2
   player-max-chunk-load-rate: -1.0
-  player-max-concurrent-loads: 20.0
-  target-player-chunk-send-rate: 100.0
+  player-max-concurrent-loads: 40.0
+  target-player-chunk-send-rate: 200.0
 chunk-system:
   gen-parallelism: default
   io-threads: -1
