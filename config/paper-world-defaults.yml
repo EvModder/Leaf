@@ -76,6 +76,7 @@ entities:
     do-collision-entity-lookups: true
     tick: true
   behavior:
+    allow-spider-world-border-climbing: true
     baby-zombie-movement-modifier: 0.5
     disable-chest-cat-detection: false
     disable-creeper-lingering-effect: false
@@ -254,7 +255,7 @@ misc:
   disable-sprint-interruption-on-attack: false
   light-queue-size: 20
   max-leash-distance: 10.0
-  redstone-implementation: VANILLA
+  redstone-implementation: ALTERNATE_CURRENT
   shield-blocking-delay: 5
   show-sign-click-command-failure-msgs-to-player: false
   update-pathfinding-on-block-update: true
