@@ -214,6 +214,7 @@ world-settings:
       azalea:
         growth-chance: 0.0
       beacon:
+        allow-effects-with-tinted-glass: false
         effect-range:
           level-1: 20
           level-2: 30
