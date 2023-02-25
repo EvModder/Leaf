@@ -1,1 +1,2 @@
-UNKNOWN:            0.000
+UNKNOWN: 0
+PLAYER: 0.5

@@ -10,6 +10,8 @@
 
 verbose: false
 settings:
+  clamp-attributes: true
+  limit-armor: true
   block-fall-multipliers:
     minecraft:light_gray_bed:
       distance: 0.5
@@ -196,6 +198,10 @@ world-settings:
       entity:
         shared-random: true
     blocks:
+      sugar_cane:
+        affected-by-bonemeal: false
+      nether_wart:
+        affected-by-bonemeal: false
       coral:
         die-outside-water: true
       sculk_shrieker:
@@ -234,6 +240,7 @@ world-settings:
       budding_amethyst:
         silk-touch: false
       cactus:
+        affected-by-bonemeal: false
         breaks-from-solid-neighbors: true
       campfire:
         lit-when-placed: true
@@ -354,6 +361,16 @@ world-settings:
           dripstone-lava: 0.05859375
     mobs:
       camel:
+        attributes:
+          max_health:
+            min: 32.0
+            max: 32.0
+          jump_strength:
+            min: 0.42
+            max: 0.42
+          movement_speed:
+            min: 0.09
+            max: 0.09
         breeding-delay-ticks: 6000
       allay:
         respect-nbt: []
@@ -1407,6 +1424,7 @@ world-settings:
     hunger:
       starvation-damage: 1.0
     gameplay-mechanics:
+      clamp-explosion-radius: true
       milk-clears-beneficial-effects: true
       arrow:
         movement-resets-despawn-counter: true
