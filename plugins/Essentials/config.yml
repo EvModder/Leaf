@@ -423,7 +423,7 @@ allow-silent-join-quit: false
 # or set this to "" to hide the message entirely.
 # You may use color codes, {USERNAME} for the player's name, and {PLAYER} for the player's displayname.
 custom-join-message: ""
-custom-quit-message: ""
+custom-quit-message: "none"
 
 # Should Essentials override the vanilla "Server Full" message with its own from the language file?
 # Set to false to keep the vanilla message.

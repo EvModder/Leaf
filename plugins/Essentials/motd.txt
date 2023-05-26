@@ -1,4 +1,3 @@
-&6Welcome, {PLAYER}&6!
-&6Type &c/help&6 for a list of commands.
-&6Type &c/list&6 to see who else is online.
-&6Players online:&c {ONLINE} &6- World time:&c {WORLDTIME12}
+&#44cc44Hi &#eeeeee{PLAYER}&#44cc44!
+&#44cc44Do &2/help&#44cc44 to view available commands
+&#44cc44Players online:&7 {ONLINE} &2- &#44cc44World time:&7 {WORLDTIME12}
