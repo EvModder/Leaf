@@ -37,8 +37,12 @@ discord-link: 'https://discord.gg/DMcxR5D'
 enable-custom-bows: false
 prevent-arrow-invulnerability: false
 shift-click-to-ride-in-gm1: true
-click-to-remove-eyes-of-ender: false
+
+click-to-remove-eyes-of-ender: true
 remove-eye-of-ender-shatter-chance: 0.2
+add-extra-strongholds: false
+extra-stronghold-density-in-km2: 0.0688863
+extra-stronghold-max-random-offset: 5000
 
 login-noteblock: true
 login-show-recent-joins: false
@@ -77,6 +81,8 @@ keep-if-op: true
 global-command-cooldowns:
   weather: 1200
 
+fix-paper-rng-manip: true
+fix-paper-gravity-dupe: true
 
 #--------------------------------------#
 #          Custom Scoarboards          #
@@ -120,7 +126,7 @@ paid-commands:
 #  'factions claim': 3
 #  home: 0.1
 
-update-balance-watch: false
+# If true, 'paid-commands' will be included in 'update-balance-commands'
 update-balance-on-paid-commands: true
 update-balance-commands:
   - pay
@@ -288,8 +294,7 @@ book-editor-enabled: true
 #--------------------------------------#
 #             Split Worlds             #
 #--------------------------------------#
-splitworlds-enabled: false
-vaccinate-players: false
+splitworlds-enabled: true
 
 # Groups of worlds that share the inventories. World inventories are separate by default.
 # Groups can be named whatever you like, but be precise with world names. * is wild.
@@ -302,6 +307,11 @@ shared-inv-worlds:
   pair_with_the_end:
     - '*'
     - '*_the_end'
+## Simpler alternative:
+#  default_group:
+#    - '*'
+#    - '*_nether'
+#    - '*_the_end'
 
 #--------------------------------------#
 #             Mail Service             #

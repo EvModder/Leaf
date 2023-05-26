@@ -1,34 +1,81 @@
-anti-spam: false
-anti-caps: true
-spam-result-command: "kick %name% §cReceived TMC/TMS from client\\n§fEither lag or spam... :P"
-max-chats-per-minute: 35
-max-chats-per-10s: 15
-max-chats-per-second: 4
+##############################################################################
+#                           Chat Filter / Matching                           #
+##############################################################################
+sanitize-chat: false
+sanitize-signs: false
+sanitize-commands: false
 
-set-nickname-when-setting-color: false
-use-player-displaynames: true
-item-hover-display: true
-item-replacement: "[i]" #todo: not currently used
-sanitize-chat: true
-sanitize-signs: true
-sanitize-commands: true
+# Option to disable filtering on the first X arguments of a command (eg "/f ")
 sanitize-commands-start-argument: 2
-filth-result-command: ""
 
-# Warning: the following configuration option can cause harmless
-# words to be blocked if their reversed spelling matches a bad word.
+# A command to run whenever a player uses a bad word (eg "/mute %name% 5m")
+badword-result-command: ''
+
+# If more then 55% of a long chat message is uppercase, make it lowercase
+anti-caps: true
+
+# If a substitution isn't specified in blocked-words.txt, this will get used
+# Set to empty to disable, or to a single character to auto-match word length
+default-badword-replacement: '*'
+
+# Warning: This option can cause harmless words to be blocked if their reverse
+# spelling matches a blocked word
 check-badwords-backwards: false
 
-default-badword-replacement: "*"
 
-# It is generally good to disable these if you have another plugin
-# that handles sign/chat color (such as EssentialsChat)
+##############################################################################
+#                                Spam Limiter                                #
+##############################################################################
+anti-spam: false
+spam-result-command: "kick %name% §cReceived TMC/TMS from client\\n§fEither lag or spam... :P"
+max-chats-per-second: 4
+max-chats-per-10s: 15
+max-chats-per-minute: 35
+
+
+##############################################################################
+#                                Item Sharing                                #
+##############################################################################
+# Enable [item-replacement] feature
+item-hover-display: true
+
+# To embed item hover-displays in chat, players can put {prefix}{sub}{suffix}
+# in their message and ChatManager will substitute it for a display component.
+# "sub" can be repeated 2+ times to escape the subtitution.
+# Default format is [i] as seen below
+item-share-prefix: '['
+item-share-suffix: ']'
+item-share-mainhand: 'i'
+item-share-offhand: 'o'
+# Note: Items in hotbar can be shared with 1-9
+
+# The limit in bytes of item-display components sent to client per message
+message-json-limit: 15000
+
+
+##############################################################################
+#                              General Features                              #
+##############################################################################
+# Automatically update the plugin (might be unreliable)
+update-plugin: true
+
+# Should we use the player's DisplayName in their chats?
+use-player-displaynames: true
+
+# Should we use the player's current Team settings in their chats?
+use-player-teams: true
+# Should we use the main (or per-player) scoreboard for Team lookups?
+use-main-scoreboard: true
+
+plugin-message-prefix: "&3<&aC&3>&f "
+log-chat-to-console: true
+
+# For the /color command, trigger /nick (for Essentials compatibility)
+set-nickname-when-setting-color: false
+
+# It is recommended to disable these if you have a plugin or server that
+# already provides sign/chat color permissions. Eg: EssentialsChat or Purpur
 chat-colors: true
 chat-formats: true
 sign-colors: true
 sign-formats: true
-
-# Automatically update the plugin
-update-plugin: true
-
-plugin-message-prefix: "&3<&aC&3>&f "
