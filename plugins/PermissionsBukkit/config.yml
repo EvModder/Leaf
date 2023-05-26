@@ -39,6 +39,7 @@ hide-specific-commands:
 - erules
 - ehome
 - ehomes
+- emotd
 - epm
 - etell
 - ewhisper
@@ -94,17 +95,19 @@ groups:
       bukkit.command.plugins: true
       bukkit.command.help: false
       essentials.discord.receive.primary: true
+      essentials.afk: true
       essentials.home: true
       essentials.home.bed: true
       essentials.sethome.bed: true
       essentials.chat.url: true
       essentials.help: true
       essentials.kick.notify: true
+      essentials.motd: true
       essentials.msg: true
       essentials.msg.url: true
       essentials.mute.notify: true
       essentials.me: true
-      essentials.ping: true
+      essentials.ping: true #includes /echo
       essentials.rules: true
       essentials.signs.use.*: true
       essentials.signs.color: true
