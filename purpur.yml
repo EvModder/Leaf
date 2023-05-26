@@ -10,6 +10,7 @@
 
 verbose: false
 settings:
+  fix-network-serialized-items-in-creative: false
   clamp-attributes: true
   limit-armor: true
   block-fall-multipliers:
@@ -191,7 +192,7 @@ settings:
     suppress-setblock-in-far-chunk-errors: false
   tps-catchup: true
   server-mod-name: Speegot
-config-version: 31
+config-version: 32
 world-settings:
   default:
     settings:
@@ -360,6 +361,13 @@ world-settings:
           dripstone-water: 0.17578125
           dripstone-lava: 0.05859375
     mobs:
+      sniffer:
+        ridable: false
+        ridable-in-water: true
+        controllable: true
+        attributes:
+          max_health: 14.0
+        breeding-delay-ticks: 6000
       camel:
         attributes:
           max_health:
@@ -1306,6 +1314,15 @@ world-settings:
           minecraft:mangrove_wood:
             into: minecraft:stripped_mangrove_wood
             drops: {}
+          minecraft:cherry_log:
+            into: minecraft:stripped_cherry_log
+            drops: {}
+          minecraft:cherry_wood:
+            into: minecraft:stripped_cherry_wood
+            drops: {}
+          minecraft:bamboo_block:
+            into: minecraft:stripped_bamboo_block
+            drops: {}
         waxables:
           minecraft:waxed_oxidized_cut_copper_stairs:
             drops: {}
@@ -1418,6 +1435,7 @@ world-settings:
         replant-crops: false
         replant-nether-warts: false
     ridable-settings:
+      use-dismounts-underwater-tag: true
       babies-are-ridable: true
       untamed-tamables-are-ridable: true
       use-night-vision: false
@@ -1491,6 +1509,8 @@ world-settings:
           fire: []
           lightning: []
         shears:
+          ignore-in-water: false
+          ignore-in-lava: false
           damage-if-sprinting: false
           sprinting-damage: 1.0
         ender-pearl:
