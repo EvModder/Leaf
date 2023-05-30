@@ -15,7 +15,7 @@
 _version: 30
 anticheat:
   anti-xray:
-    enabled: false
+    enabled: true
     engine-mode: 1
     hidden-blocks:
     - copper_ore
@@ -28,9 +28,6 @@ anticheat:
     - deepslate_coal_ore
     - lapis_ore
     - deepslate_lapis_ore
-    - mossy_cobblestone
-    - obsidian
-    - chest
     - diamond_ore
     - deepslate_diamond_ore
     - redstone_ore
@@ -38,7 +35,7 @@ anticheat:
     - clay
     - emerald_ore
     - deepslate_emerald_ore
-    - ender_chest
+    - ancient_debris
     lava-obscures: false
     max-block-height: 64
     replacement-blocks:
@@ -49,8 +46,8 @@ anticheat:
     use-permission: false
   obfuscation:
     items:
-      hide-durability: false
-      hide-itemmeta: false
+      hide-durability: true
+      hide-itemmeta: true
       hide-itemmeta-with-visual-effects: false
 chunks:
   auto-save-interval: default
@@ -165,13 +162,8 @@ entities:
     duplicate-uuid:
       mode: SAFE_REGEN
       safe-regen-delete-range: 32
-    filter-bad-tile-entity-nbt-from-falling-blocks: true
-    filtered-entity-tag-nbt-paths:
-    - Pos
-    - Motion
-    - SleepingX
-    - SleepingY
-    - SleepingZ
+    filter-bad-tile-entity-nbt-from-falling-blocks: false
+    filtered-entity-tag-nbt-paths: []
     iron-golems-can-spawn-in-air: true
     monster-spawn-max-light-level: -1
     non-player-arrow-despawn-rate: default
@@ -204,7 +196,7 @@ entities:
 environment:
   disable-explosion-knockback: false
   disable-ice-and-snow: false
-  disable-teleportation-suffocation-check: false
+  disable-teleportation-suffocation-check: true
   disable-thunder: false
   fire-tick-delay: 30
   frosted-ice:
@@ -238,8 +230,8 @@ fixes:
   split-overstacked-loot: false
   tnt-entity-height-nerf: disabled
 hopper:
-  cooldown-when-full: true
-  disable-move-event: false
+  cooldown-when-full: false
+  disable-move-event: true # breaks plugins, but is vanilla
   ignore-occluding-blocks: false
 lootables:
   auto-replenish: false
@@ -271,7 +263,7 @@ scoreboards:
   allow-non-player-entities-on-scoreboards: false
   use-vanilla-world-scoreboard-name-coloring: true
 spawn:
-  allow-using-signs-inside-spawn-protection: false
+  allow-using-signs-inside-spawn-protection: true
   keep-spawn-loaded: false
   keep-spawn-loaded-range: 10
 tick-rates:
@@ -283,6 +275,6 @@ tick-rates:
   mob-spawner: 1
   sensor:
     villager:
-      secondarypoisensor: 40
+      secondarypoisensor: -1
 unsupported-settings:
   fix-invulnerable-end-crystal-exploit: false

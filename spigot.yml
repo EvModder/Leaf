@@ -34,7 +34,7 @@ settings:
   log-named-deaths: false
 messages:
   whitelist: YOU - SHALL NOT - PASS (temporary whitelist)
-  unknown-command: Unknown command dude. Try "/help"
+  unknown-command: Unknown command brah. Try "/help"
   server-full: Sorry server is full!
   outdated-client: Outdated client! Please use version {0}
   outdated-server: Server not yet updated! For now, please login using {0}

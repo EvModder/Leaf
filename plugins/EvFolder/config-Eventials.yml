@@ -25,6 +25,7 @@ add-recipes: false
 pre-command: true #Required for a lot of features/functionality
 fancy-pl: true
 command-aliases: true
+show-permissionless-commands-in-plugin-help: false
 use-hyperwarps: true
 quick-warps: [adminshop, market]
 tell-death-coords: false

@@ -24,8 +24,8 @@ chunk-loading:
   max-concurrent-sends: 2
   min-load-radius: 2
   player-max-chunk-load-rate: -1.0
-  player-max-concurrent-loads: 40.0
-  target-player-chunk-send-rate: 200.0
+  player-max-concurrent-loads: 20.0
+  target-player-chunk-send-rate: 100.0
 chunk-system:
   gen-parallelism: default
   io-threads: -1
@@ -51,7 +51,7 @@ item-validation:
     total-multiplier: 0.98
   display-name: 8192
   lore-line: 8192
-  resolve-selectors-in-books: false
+  resolve-selectors-in-books: true
 logging:
   deobfuscate-stacktraces: true
   log-player-ip-addresses: true
@@ -69,7 +69,7 @@ misc:
   chat-threads:
     chat-executor-core-size: -1
     chat-executor-max-size: -1
-  fix-entity-position-desync: true
+  fix-entity-position-desync: false
   lag-compensate-block-breaking: true
   load-permissions-yml-before-plugins: true
   max-joins-per-tick: 3
@@ -79,8 +79,8 @@ misc:
   use-dimension-type-for-custom-spawners: false
 packet-limiter:
   all-packets:
-    action: KICK
-    interval: 7.0
+    action: DROP
+    interval: 5.0
     max-packet-rate: 500.0
   kick-message: <red><lang:disconnect.exceeded_packet_rate>
   overrides:
@@ -103,9 +103,9 @@ scoreboards:
   save-empty-scoreboard-teams: false
   track-plugin-scoreboards: false
 spam-limiter:
-  incoming-packet-threshold: 300
+  incoming-packet-threshold: 500
   recipe-spam-increment: 1
-  recipe-spam-limit: 20
+  recipe-spam-limit: 400
   tab-spam-increment: 1
   tab-spam-limit: 500
 timings:
