@@ -17,7 +17,7 @@
 #--------------------------------------#
 #           Eventials config           #
 #--------------------------------------#
-server-name: urmom
+server-name: Leaf
 
 #Horse armor, Saddles, Nametags, CrackedBricks, DoubleSlabs, PackedIce
 add-recipes: false
@@ -25,8 +25,8 @@ add-recipes: false
 pre-command: true #Required for a lot of features/functionality
 fancy-pl: true
 command-aliases: true
-show-permissionless-commands-in-plugin-help: false
-use-hyperwarps: true
+show-permissionless-commands-in-plugin-help: true
+use-hyperwarps: false
 quick-warps: [adminshop, market]
 tell-death-coords: false
 log-death-coords: true
@@ -41,9 +41,14 @@ shift-click-to-ride-in-gm1: true
 
 click-to-remove-eyes-of-ender: true
 remove-eye-of-ender-shatter-chance: 0.2
-add-extra-strongholds: false
-extra-stronghold-density-in-km2: 0.0688863
-extra-stronghold-max-random-offset: 5000
+add-extra-strongholds: true
+
+# Do not set this lower than 24320
+extra-stronghold-min-distance-to-origin: 25856
+
+# This will space strongholds roughly ~4050 blocks apart
+extra-stronghold-density-in-km2: 0.06094490701
+extra-stronghold-max-random-offset: 6075
 
 login-noteblock: true
 login-show-recent-joins: false
