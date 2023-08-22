@@ -29,6 +29,7 @@ web-services:
 misc:
   disable-method-profiler: true
   disable-out-of-order-chat: false
+  suppress-null-id-disconnections: false
 # These values define a entity's maximum lifespan. If an
 # entity is in this list and it has survived for longer than
 # that number of ticks, then it will be removed. Setting a value to
@@ -38,3 +39,4 @@ entity_timeouts:
   LLAMA_SPIT: -1
 enable-async-entity-tracker: false
 enable-async-pathfinding: false
+allow-end-crystal-respawn: true

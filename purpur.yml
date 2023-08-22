@@ -52,6 +52,7 @@ settings:
   blast-resistance-overrides: {}
   use-alternate-keepalive: true
   messages:
+    afk-broadcast-use-display-name: false
     ram-command-output: '<green>Ram Usage: <used>/<xmx> (<percent>)'
     rambar-command-output: <green>Rambar toggled <onoff> for <target>
     death-message:
@@ -192,7 +193,7 @@ settings:
     suppress-setblock-in-far-chunk-errors: false
   tps-catchup: true
   server-mod-name: Speegot
-config-version: 32
+config-version: 33
 world-settings:
   default:
     settings:
@@ -325,6 +326,7 @@ world-settings:
         deactivate-by-redstone: false
         fix-mc-238526: false
       sponge:
+        absorbs-water-from-mud: false
         absorption:
           # todo: test this
           area: 64
@@ -369,6 +371,7 @@ world-settings:
           max_health: 14.0
         breeding-delay-ticks: 6000
       camel:
+        ridable-in-water: false
         attributes:
           max_health:
             min: 32.0
@@ -489,6 +492,13 @@ world-settings:
         controllable: true
         ridable-max-y: 320.0
         attributes:
+          follow_range: 16.0
+          knockback_resistance: 0.0
+          movement_speed: 0.6
+          flying_speed: 0.6
+          armor: 0.0
+          armor_toughness: 0.0
+          attack_knockback: 0.0
           max_health: 6.0
         takes-damage-from-water: false
         always-drop-exp: false
@@ -829,6 +839,7 @@ world-settings:
         takes-damage-from-water: false
         always-drop-exp: false
       ocelot:
+        spawn-below-sea-level: false
         ridable: false
         ridable-in-water: false
         controllable: true
@@ -867,6 +878,7 @@ world-settings:
         takes-damage-from-water: false
         always-drop-exp: false
       piglin:
+        ignores-armor-with-gold-trim: false
         head-visibility-percent: 0.5
         ridable: false
         ridable-in-water: false
@@ -1434,6 +1446,26 @@ world-settings:
             into: minecraft:farmland
         replant-crops: false
         replant-nether-warts: false
+      shovel:
+        flattenables:
+          minecraft:coarse_dirt:
+            into: minecraft:dirt_path
+            drops: {}
+          minecraft:dirt:
+            into: minecraft:dirt_path
+            drops: {}
+          minecraft:grass_block:
+            into: minecraft:dirt_path
+            drops: {}
+          minecraft:mycelium:
+            into: minecraft:dirt_path
+            drops: {}
+          minecraft:podzol:
+            into: minecraft:dirt_path
+            drops: {}
+          minecraft:rooted_dirt:
+            into: minecraft:dirt_path
+            drops: {}
     ridable-settings:
       use-dismounts-underwater-tag: true
       babies-are-ridable: true
@@ -1442,6 +1474,7 @@ world-settings:
     hunger:
       starvation-damage: 1.0
     gameplay-mechanics:
+      mending-multiplier: 1.0
       clamp-explosion-radius: true
       milk-clears-beneficial-effects: true
       arrow:
@@ -1509,6 +1542,7 @@ world-settings:
           fire: []
           lightning: []
         shears:
+          defuse-tnt-chance: 0.0
           ignore-in-water: false
           ignore-in-lava: false
           damage-if-sprinting: false
@@ -1544,6 +1578,8 @@ world-settings:
         wandering-traders: default
         village-sieges: default
       player:
+        portal-wait-time: 80
+        creative-portal-wait-time: 1
         teleport-on-nether-ceiling-damage: false
         burp-delay: 10
         netherite-fire-resistance:
@@ -1590,13 +1626,6 @@ world-settings:
         throwable-potion: 1.0
         trident: 1.0
         snowball: 1.0
-      shovel-turns-block-to-grass-path:
-      - minecraft:coarse_dirt
-      - minecraft:dirt
-      - minecraft:grass_block
-      - minecraft:mycelium
-      - minecraft:podzol
-      - minecraft:rooted_dirt
       silk-touch:
         enabled: false
         spawner-name: <reset><white>Spawner

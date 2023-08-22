@@ -60,6 +60,7 @@ chunks:
     small_fireball: -1
     snowball: -1
   fixed-chunk-inhabited-time: -1
+  flush-regions-on-save: false
   max-auto-save-chunks-per-tick: 24
   prevent-moving-into-unloaded-chunks: false
 collisions:
@@ -231,7 +232,7 @@ fixes:
   tnt-entity-height-nerf: disabled
 hopper:
   cooldown-when-full: false
-  disable-move-event: true # breaks plugins, but is vanilla
+  disable-move-event: true
   ignore-occluding-blocks: false
 lootables:
   auto-replenish: false
@@ -240,6 +241,7 @@ lootables:
   refresh-min: 12h
   reset-seed-on-fill: true
   restrict-player-reloot: true
+  restrict-player-reloot-time: disabled
 maps:
   item-frame-cursor-limit: 128
   item-frame-cursor-update-interval: 10
