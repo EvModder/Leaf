@@ -1,0 +1,17 @@
+spawns:
+  default:
+    world: 88d38ce0-6e72-4998-9aa1-1f61adb53393
+    world-name: CherrySpawn
+    x: 8.5
+    y: 122.0
+    z: -31.5
+    yaw: 0.0
+    pitch: 0.0
+  cherryspawn:
+    world: 88d38ce0-6e72-4998-9aa1-1f61adb53393
+    world-name: CherrySpawn
+    x: 8.5
+    y: 122.0
+    z: -31.5
+    yaw: 0.0
+    pitch: 0.0

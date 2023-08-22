@@ -75,6 +75,7 @@ set-nickname-when-setting-color: false
 
 # Should name colors also be applied to the (TAB) player list?
 use-colors-in-player-list: true
+use-teams-for-name-colors: true
 
 # It is recommended to disable these if you have a plugin or server that
 # already provides sign/chat color permissions. Eg: EssentialsChat or Purpur

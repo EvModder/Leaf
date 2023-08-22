@@ -1,5 +1,52 @@
 worlds:
-  MySwamp_nether:
+  DaWorld_the_end:
+    ==: MVWorld
+    hidden: 'false'
+    alias: ''
+    color: WHITE
+    style: NORMAL
+    pvp: 'true'
+    scale: '16.0'
+    respawnWorld: DaWorld
+    allowWeather: 'true'
+    difficulty: HARD
+    spawning:
+      ==: MVSpawnSettings
+      animals:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+      monsters:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+    entryfee:
+      ==: MVEntryFee
+      amount: '0.0'
+    hunger: 'true'
+    autoHeal: 'true'
+    adjustSpawn: 'false'
+    portalForm: ALL
+    gameMode: SURVIVAL
+    keepSpawnInMemory: 'false'
+    spawnLocation:
+      ==: MVSpawnLocation
+      x: 0.0
+      y: 59.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+    autoLoad: 'true'
+    bedRespawn: 'true'
+    worldBlacklist: []
+    environment: THE_END
+    seed: '9000078390451079882'
+    generator: 'null'
+    playerLimit: '-1'
+    allowFlight: 'true'
+  DaWorld_nether:
     ==: MVWorld
     hidden: 'false'
     alias: ''
@@ -38,22 +85,22 @@ worlds:
       z: 4.0
       pitch: 0.0
       yaw: 0.0
-    autoLoad: 'false'
+    autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NETHER
-    seed: '654585152'
+    seed: '9000078390451079882'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
-  MySwamp_the_end:
+  DaWorld:
     ==: MVWorld
     hidden: 'false'
     alias: ''
     color: WHITE
     style: NORMAL
     pvp: 'true'
-    scale: '16.0'
+    scale: '1.0'
     respawnWorld: ''
     allowWeather: 'true'
     difficulty: HARD
@@ -81,29 +128,29 @@ worlds:
     spawnLocation:
       ==: MVSpawnLocation
       x: 0.0
-      y: 59.0
+      y: 124.0
       z: 0.0
       pitch: 0.0
       yaw: 0.0
-    autoLoad: 'false'
+    autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
-    environment: THE_END
-    seed: '654585152'
+    environment: NORMAL
+    seed: '9000078390451079882'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
-  MySwamp:
+  CherrySpawn:
     ==: MVWorld
     hidden: 'false'
-    alias: MySwamp
+    alias: ''
     color: WHITE
     style: NORMAL
     pvp: 'true'
     scale: '1.0'
     respawnWorld: ''
     allowWeather: 'true'
-    difficulty: HARD
+    difficulty: EASY
     spawning:
       ==: MVSpawnSettings
       animals:
@@ -121,69 +168,22 @@ worlds:
       amount: '0.0'
     hunger: 'true'
     autoHeal: 'true'
-    adjustSpawn: 'true'
-    portalForm: ALL
-    gameMode: SURVIVAL
-    keepSpawnInMemory: 'true'
-    spawnLocation:
-      ==: MVSpawnLocation
-      x: 0.0
-      y: 73.0
-      z: 0.0
-      pitch: 0.0
-      yaw: 0.0
-    autoLoad: 'true'
-    bedRespawn: 'true'
-    worldBlacklist: []
-    environment: NORMAL
-    seed: '654585152'
-    generator: 'null'
-    playerLimit: '-1'
-    allowFlight: 'true'
-  Skyland:
-    ==: MVWorld
-    hidden: 'false'
-    alias: Skyland
-    color: WHITE
-    style: NORMAL
-    pvp: 'true'
-    scale: '1.0'
-    respawnWorld: ''
-    allowWeather: 'true'
-    difficulty: HARD
-    spawning:
-      ==: MVSpawnSettings
-      animals:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-      monsters:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-    entryfee:
-      ==: MVEntryFee
-      amount: '0.0'
-    hunger: 'true'
-    autoHeal: 'false'
     adjustSpawn: 'false'
     portalForm: ALL
     gameMode: ADVENTURE
     keepSpawnInMemory: 'false'
     spawnLocation:
       ==: MVSpawnLocation
-      x: 0.5
-      y: 0.5
-      z: 0.5
+      x: 0.0
+      y: 100.0
+      z: 0.0
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'false'
+    bedRespawn: 'true'
     worldBlacklist: []
     environment: NORMAL
-    seed: '-468226452'
+    seed: '9000000000043861106'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'

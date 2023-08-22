@@ -29,7 +29,6 @@ hide-specific-commands:
 - tool
 - we
 - worldedit
-#aliases to hide
 - action
 - eaction
 - describe
@@ -64,7 +63,7 @@ users:
   2e48d5f1-fb0e-4048-8468-0738a3ec07b8:
     groups:
     - admin
-    name: KlayADR
+    name: MelonCollieADR
   3b106625-11f8-458b-b321-dfca01799cf9:
     groups:
     - default
@@ -96,7 +95,8 @@ groups:
       bukkit.command.help: false
       essentials.discord.receive.primary: true
       essentials.afk: true
-      essentials.home: true
+      essentials.home: false
+      essentials.spawn: true
       essentials.home.bed: true
       essentials.sethome.bed: true
       essentials.chat.url: true
@@ -107,7 +107,7 @@ groups:
       essentials.msg.url: true
       essentials.mute.notify: true
       essentials.me: true
-      essentials.ping: true #includes /echo
+      essentials.ping: true # includes /echo
       essentials.rules: true
       essentials.signs.use.*: true
       essentials.signs.color: true
@@ -132,6 +132,7 @@ groups:
       essentials.fly.safelogin: false
       mv.bypass.gamemode.*: true
       chatmanager.command.color.custom: true
+      bukkit.command.version: true
     inheritance:
     - default
 

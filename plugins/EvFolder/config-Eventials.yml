@@ -1,32 +1,15 @@
-# Eventials TODO:
-# -Maps (load images, organize/optimize map saving and new map creation)
-# -Bungee version: data_specific_ping_msgs, admin sneak join, trans-server teleport aliases, login where you logout.
-# -Scheduler: Copy over automsgs & test tellraw
-# showrecentcommand, show-me-in-recent, show-me-recent-on-join
-# only do creeper explosions when regional difficulty > x
-# /showshop - explain how to create a [Trade] sign
-# More customize /pl per-server
-
-# &X - open_file        - CLICK
-# &X - change_page      - CLICK
-# &X - show_text        - HOVER
-# &X - show_achievement - HOVER
-# &X - show_item        - HOVER
-# &X - show_entity      - HOVER
-
 #--------------------------------------#
 #           Eventials config           #
 #--------------------------------------#
-server-name: Leaf
+server-name: Leafcraft
 
-#Horse armor, Saddles, Nametags, CrackedBricks, DoubleSlabs, PackedIce
 add-recipes: false
 
-pre-command: true #Required for a lot of features/functionality
+pre-command: true
 fancy-pl: true
 command-aliases: true
 show-permissionless-commands-in-plugin-help: true
-use-hyperwarps: false
+use-hyperwarps: true
 quick-warps: [adminshop, market]
 tell-death-coords: false
 log-death-coords: true
@@ -48,7 +31,7 @@ extra-stronghold-min-distance-to-origin: 25856
 
 # This will space strongholds roughly ~4050 blocks apart
 extra-stronghold-density-in-km2: 0.06094490701
-extra-stronghold-max-random-offset: 6075
+extra-stronghold-max-random-offset: 6076
 
 login-noteblock: true
 login-show-recent-joins: false
@@ -56,25 +39,9 @@ max-recent-joins-shown: 0
 max-recent-joins-stored: 50
 record-player-addresses: true
 
-# Maximum number of online players before new players cannot join
-# New-player status removed after 1 hr of gameplay
-# newP = (hasPlayedBefore || p.getstat(timeplayed) < 1 hr)
-max-capacity-allowing-new-players:
-
 default-nophysics-radius: 32
 
-# range (0-1], set to 1 (for 100%) to disable
-skip-night-sleep-percent-required: 1
-skip-storm-sleep-percent-required: 1
-skip-thunder-sleep-percent-required: 1
-skip-percent-inclusive-bound: true
-count-gm3-in-sleep-required: false
-count-gm1-in-sleep-required: false
-only-skip-if-nighttime: true
-skip-night-notify-if-natural: true
-
 inactive-days-until-player-delete: 999
-#TODO: Advancements checker is broken
 keep-if-has-x-advancements: 20
 keep-if-time-played-outweighs-time-inactive: true
 keep-if-above-starting-balance: true
@@ -91,149 +58,14 @@ fix-paper-rng-manip: true
 fix-paper-gravity-dupe: true
 
 #--------------------------------------#
-#          Custom Scoarboards          #
-#--------------------------------------#
-add-scoreboards-for-vanilla-statistics: true
-add-scoreboards-for-items-destroyed: true
-add-scoreboards-for-horse-attributes: true
-add-scoreboard-for-chats: true
-add-scoreboard-for-advancements: true
-advancements-counted: [story, adventure, nether, end, husbandry]
-
-#--------------------------------------#
 #           EvEconomy config           #
 #--------------------------------------#
 economy-enabled: false
 
-#Set track-server-balance to false for an infinite server balance
-track-server-balance: true
-starting-server-balance: 10000
-track-global-balance: true
-starting-global-balance: 10000
-starting-balance: 0
-server-pays-starting-balance: true
-custom-baltop: true
-
-#A list of commands with prices attached to them
-#Not guaranteed to work with all plugins!
-#Use 'eventials.bypass.paidcommands' to bypass all commands or
-#'eventials.bypass.paidcommands.cmd' for a specific commands
-paid-commands:
-  weather: 20.0
-  claimhorse: 5.0
-  lockhorse: 5.0
-  gethorse: 2.5
-  inspecthorse: 1.0
-  repair: 30.0
-  separate: 5.0
-  weaponstats: 25.0
-  unsignbook: 5.0
-  suicide: 10.0
-#  'factions claim': 3
-#  home: 0.1
-
-# If true, 'paid-commands' will be included in 'update-balance-commands'
-update-balance-on-paid-commands: true
-update-balance-commands:
-  - pay
-  - withdraw
-  - deposit
-  - sell
-  - moneyorder
-  - bal
-  - balance
-  - eco
-  - economy
-  - serverbal
-
-use-item-as-currency: false
-currency-item: LILY_PAD
-currency-symbol: '&2L'
-
-ad-cost: 100
-ad-default: '&7Your advertisement here, for only 100L'
-ad-max-length: 43
-#Duration in days
-ad-duration: 14
-#The date in milliseconds of the current ad's expiration
-ad-expires-on: 0
-
-#Currently, there are 55 vanilla advancements
-advancement-reward: false
-advancement-completion-prize: 500
-advancement-exponential-base: 1.05
-advancement-constant-multiplier: 10
-advancement-min-before-reward: 5
-advancement-max-reward: 500
-advancements-included:
-  - story
-  - adventure
-  - nether
-  - end
-  - husbandry
-
-login-daily-money: 0
-online-when-daily-money-bonus: 1
-announce-daily-money: true
-economy-signs: true
-
-enable-moneyorders: false
-moneyorder-min: 10
-moneyorder-max: 1000
-moneyorder-tax-percent: 25
-
-#Adjust chunk generation cost per-world
-default-chunk-generate-cost: 0
-chunk-generate-cost:
-#  world: 0.1
-#  world_nether: 0.07
-#  world_the_end: 0.05
-# What happens when a player can't afford the chunk-generate-cost?
-# Possible values: TP_SPAWN, NOTHING
-chunk-generate-failure: TP_SPAWN
-
 #--------------------------------------#
 #           Messenger config           #
 #--------------------------------------#
-#Frequency of the clock in seconds
 scheduler-enabled: false
-clock-period: 60 #Default 60s per cycle
-
-#To disable a task, set its frequency to 0
-cycles-per-eventials-data-save: 2
-cycles-per-automessage: 1
-cycles-per-mob-clear: 0
-cycles-per-worldsave: 0
-cycles-per-player-delete: 0
-cycles-per-magic-day-reward: 60
-cycles-per-holiday-action: 5
-
-skip-automessage-if-other-event: true
-skip-automessage-if-no-chats: true
-
-pmc-auto-bump: false
-pmc-resource-id: 4368271
-pmc-login-token: "a61f2bd3aa2d3ecdc0f3e26e51d0ca406b17e998712949380a35e1d\
-                  44de5239588cbacc64b185c48126bf9800ab4c4ea16016c13a8fc38\
-                  0de18621abb64a2fd95e43c884847641db247273f5eb1ccb0ed63a77"
-
-#Remember usernames for personalized automsgs
-save-ips: true
-max-saved-ips: 200
-
-message-color: '&c'
-message-prefix: '&3[&7TC&3]&c '
-#Auto-messages were moved to bottom of the file
-#(because there are a lot of them)
-
-custom-ping: false
-ping-prefix: '&9&l&m  &7 ' # '  &9&l&m -&7 '
-#Ping messages are at the bottom of this file
-
-blacklisted-ips:
-  - ''
-
-prevent-multicraft-list-console-spam: false
 
 #--------------------------------------#
 #           EvSpawner config           #
@@ -244,7 +76,7 @@ stackable-spawners: false
 drop-monsteregg-blocks: false
 allow-nbt-container-placement: true
 allow-nbt-commandblock-placement: true
-allow-colorcodes-in-commandblock: true #TODO
+allow-colorcodes-in-commandblock: true
 
 #These do not require 'evspawner-enabled: true'
 disable-skeleton-traps: false
@@ -260,9 +92,6 @@ dye-shulkers: true
 #            EvVoter config            #
 #--------------------------------------#
 evvoter-enabled: true
-
-# NOTE: This is not automatically given to a player! Enter a vote-triggered
-# command below for your preferred economy plugin, using %reward_amount%.
 player-cash-reward: 0
 
 # Voting streaks can be used to modify the player-cash-reward amount.
@@ -270,16 +99,13 @@ player-cash-reward: 0
 vote-streak-op: 0 #op 0=add, 1=multiply, 2=tbd
 vote-streak-amount: 0
 vote-streak-max-days: 10
-#How much time before a vote streak is lost?
 vote-streak-grace-hours: 48
 
-vote-site-page: 'http://www.altcraft.net/voting'
+vote-site-page: ''
 vote-links:
-  - 'PMC, https://www.planetminecraft.com/server/alternatecraft-2724346/vote/'
-  - 'MMP, http://minecraft-mp.com/server/109051/vote/'
-  - 'MC Servers, http://minecraftservers.org/vote/280048'
-  - 'MCSL, http://minecraft-server-list.com/server/254265/vote/'
-  - 'MC biz, https://minecraftservers.biz/servers/2600/vote/'
+  - 'MMP, http://minecraft-mp.com/server/320576/vote/'
+  - 'MCS, https://minecraftservers.org/vote/280048'
+  - 'PMC, https://www.planetminecraft.com/server/hardcore-4368271/vote/'
 
 # Available params: %uuid%, %name%, %display_name%, %site_name%, %site_url%, %votes%, %streak%
 vote-triggered-commands:
@@ -289,40 +115,29 @@ vote-triggered-commands:
 
 # Available params: %uuid%, %name%, %display_name%, %votes%, %streak%, %reward_amount%, %reward_amount_int%
 vote-triggered-commands-once-online:
-  - 'serverbal transfer %reward_amount% %name%'
-  - 'minecraft:tellraw @p[name=%name%] {"text":"Your offline votes were added, thanks!","color":"gray"}'
+  - 'minecraft:give %name% lily_pad{display:{Name:''{"text":"Vote Token","color":"#008800","italic":false}'',Lore:[''{"text":"Unplacing","color":"gray","italic":false}'',''{"text":"Soul Bound","color":"gray","italic":false}'']},Enchantments:[{id:lure,lvl:1}],HideFlags:1,CustomModelData:1}'
+#  - 'minecraft:tellraw @p[name=%name%] {"text":"Your offline votes were added, thanks!","color":"gray"}'
 
 #--------------------------------------#
 #          BookEditor config           #
 #--------------------------------------#
-book-editor-enabled: true
+book-editor-enabled: false
 
 #--------------------------------------#
 #             Split Worlds             #
 #--------------------------------------#
 splitworlds-enabled: true
 
-# Groups of worlds that share the inventories. World inventories are separate by default.
-# Groups can be named whatever you like, but be precise with world names. * is wild.
-# WARNING: Decide how to group worlds before they are opened; when two or more worlds are
-# joined, only one of them will retain it's playerdata information
 shared-inv-worlds:
-  pair_with_nether:
+  default_group:
     - '*'
     - '*_nether'
-  pair_with_the_end:
-    - '*'
     - '*_the_end'
-## Simpler alternative:
-#  default_group:
-#    - '*'
-#    - '*_nether'
-#    - '*_the_end'
 
 #--------------------------------------#
 #             Mail Service             #
 #--------------------------------------#
-mailbox-enabled: true
+mailbox-enabled: false
 bridge-host: 'altcraft.net'
 bridge-port: 42374
 mailbox-max-connections: 100
@@ -339,15 +154,18 @@ container-fee-includes-contents: true
 #              More Stuff              #
 #--------------------------------------#
 world-borders:
-#  world:
-#    center-x: 0.5
-#    center-z: 0.5
-#    radius: 3000
-
-#Legend: &e = text, &b = link/download, &d = @Location, &2 = command, &a = $money/event/world, 
-#Legend: &9 = suggest_command, &n = other location, &c = plugin, &6 = rss pack, &r = end special block
-auto-messages:
-  - Meow
+  DaWorld:
+    center-x: 0.5
+    center-z: 0.5
+    radius: 300000
+  DaWorld_nether:
+    center-x: 0.5
+    center-z: 0.5
+    radius: 37500
+  DaWorld_the_end:
+    center-x: 0.5
+    center-z: 0.5
+    radius: 37500
 
 ping-messages:
   - ''

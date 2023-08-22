@@ -767,7 +767,7 @@ voidspawn:
 
   # When we spawn for the first time, which spawnpoint do we use?
   # Set to "none" if you want to use the spawn point of the world.
-  spawnpoint: voidspawn
+  spawnpoint: cherryspawn
 
   # Do we want to give users anything on first join? Set to '' to disable
   # This kit will be given regardless of cost and permissions, and will not trigger the kit delay.
@@ -779,13 +779,13 @@ voidspawn:
 # Set this to high, if you want EssentialsSpawn to handle the respawning.
 # Set this to highest, if you want to force EssentialsSpawn to handle the respawning.
 # Note: Changes will not apply until after the server is restarted.
-respawn-listener-priority: high
+respawn-listener-priority: none
 
 # What priority should we use for handling spawning on joining the server?
 # See respawn-listener-priority for possible values.
 # Note: Changing this may impact or break spawn-on-join functionality.
 # Note: Changes will not apply until after the server is restarted.
-spawn-join-listener-priority: high
+spawn-join-listener-priority: 'high'
 
 # When users die, should they respawn at their first home or bed, instead of the spawnpoint?
 respawn-at-home: true

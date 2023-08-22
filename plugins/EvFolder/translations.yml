@@ -1,5 +1,9 @@
 # Use this file to translate heads and messages to your preferred language
 
+# Whether to make use of the 1.19.4+ "fallback" translation feature, which
+# can improve head name localization for servers with the resource pack
+use-translation-fallbacks: true
+
 # The messages used to announce beheading
 message-beheaded: '&6${VICTIM}&r was decapitated'
 message-beheaded-by-entity: '&6${VICTIM}&r was decapitated by &6${KILLER}&r'
@@ -235,6 +239,7 @@ item-statistics:
   explosion: "Items lost to explosion"
   lightning: "Items lost to lightning"
   anvil: "Items lost to anvil smush"
+  smelt: "Items Smelted"
   unknown: "Items lost to UNKNOWN DamageCause (!)"
 
 equine-statistics:
@@ -303,3 +308,6 @@ bukkit-player-events:
   picked_up: "Items Picked Up"
   consumed: "Items Consumed"
   crafted: "Items Crafted"
+  harvested: "Blocks Harvested"
+  loot_generated: "Loot Generated"
+  brushed: "Sand/Gravel Brushed"

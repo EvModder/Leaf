@@ -9,12 +9,12 @@ multiverse-configuration:
   displaypermerrors: 'true'
   enablebuscript: 'false'
   globaldebug: '0'
-  silentstart: 'true'
+  silentstart: 'false'
   messagecooldown: '5000'
   version: '2.9'
-  firstspawnworld: MySwamp
+  firstspawnworld: DaWorld
   teleportcooldown: '1000'
   defaultportalsearch: 'true'
   portalsearchradius: '128'
   autopurge: 'true'
-  idonotwanttodonate: 'true'
+  idonotwanttodonate: 'false'
