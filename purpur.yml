@@ -10,6 +10,7 @@
 
 verbose: false
 settings:
+  player-deaths-always-show-item: false
   fix-network-serialized-items-in-creative: false
   clamp-attributes: true
   limit-armor: true
@@ -52,6 +53,7 @@ settings:
   blast-resistance-overrides: {}
   use-alternate-keepalive: true
   messages:
+    sleep-not-possible: default
     afk-broadcast-use-display-name: false
     ram-command-output: '<green>Ram Usage: <used>/<xmx> (<percent>)'
     rambar-command-output: <green>Rambar toggled <onoff> for <target>
@@ -169,6 +171,7 @@ settings:
     allow-unsafe-enchant-command: true
     clamp-levels: false
     anvil:
+      replace-incompatible-enchants: false
       allow-unsafe-enchants: false
       allow-inapplicable-enchants: true
       allow-incompatible-enchants: true
@@ -1000,6 +1003,7 @@ world-settings:
         always-drop-exp: false
         head-visibility-percent: 0.5
       skeleton_horse:
+        ridable: true
         ridable-in-water: true
         can-swim: false
         attributes:
@@ -1222,7 +1226,8 @@ world-settings:
         always-drop-exp: false
         head-visibility-percent: 0.5
       zombie_horse:
-        ridable-in-water: false
+        ridable: true
+        ridable-in-water: true
         can-swim: false
         attributes:
           max_health:
@@ -1474,6 +1479,7 @@ world-settings:
     hunger:
       starvation-damage: 1.0
     gameplay-mechanics:
+      disable-oxidation-proximity-penalty: false
       mending-multiplier: 1.0
       clamp-explosion-radius: true
       milk-clears-beneficial-effects: true
@@ -1536,6 +1542,8 @@ world-settings:
         spectral-arrows: false
         tipped-arrows: false
       item:
+        end-crystal:
+          place-anywhere: false
         immune:
           cactus: []
           explosion: []
