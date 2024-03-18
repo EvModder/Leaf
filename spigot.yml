@@ -59,7 +59,8 @@ commands:
   send-namespaced: true
 world-settings:
   default:
-    seed-trailruins: 83469867
+    seed-trialchambers: default
+    seed-trailruins: default
     seed-ancientcity: default
     seed-buriedtreasure: default
     seed-mineshaft: default

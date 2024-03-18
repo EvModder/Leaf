@@ -1,0 +1,45 @@
+#========== Jars
+*-1.*.jar
+plugins/*.jar
+
+#========== World folders
+MySwamp*
+DaWorld*
+
+#========== Server misc
+tmp/
+logs/
+cache/
+libraries/
+versions/
+bundler/
+eula.txt
+cleanup.sh
+.console_history
+help.yml
+commands.yml
+usercache.json
+whitelist.json
+banned-players.json
+banned-ips.json
+paper.yml-README.txt
+wepif.yml
+version_history.json
+
+#========== Plugin misc
+plugins/Updater/
+plugins/bStats/
+
+plugins/Essentials/upgrades-done.yml
+plugins/Essentials/userdata/
+plugins/Essentials/usermap.bin
+plugins/Essentials/usermap.csv
+plugins/Essentials/uuids.bin
+plugins/EssentialsDiscord/
+
+plugins/EvFolder/blocked-words.txt
+plugins/EvFolder/dropheads-log.txt
+plugins/EvFolder/player-addresses.txt
+plugins/EvFolder/recent-joins.txt
+
+plugins/floodgate/key.pem
