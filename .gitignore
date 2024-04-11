@@ -5,6 +5,7 @@ plugins/*.jar
 #========== World folders
 MySwamp*
 DaWorld*
+Skyland
 
 #========== Server misc
 tmp/
@@ -43,3 +44,4 @@ plugins/EvFolder/player-addresses.txt
 plugins/EvFolder/recent-joins.txt
 
 plugins/floodgate/key.pem
+plugins/Votifier/rsa
