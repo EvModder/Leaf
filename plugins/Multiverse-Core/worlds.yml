@@ -30,7 +30,7 @@ worlds:
     adjustSpawn: 'false'
     portalForm: ALL
     gameMode: SURVIVAL
-    keepSpawnInMemory: 'false'
+    keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
       x: 0.0
@@ -77,7 +77,7 @@ worlds:
     adjustSpawn: 'false'
     portalForm: ALL
     gameMode: SURVIVAL
-    keepSpawnInMemory: 'false'
+    keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
       x: 16.0
@@ -90,6 +90,53 @@ worlds:
     worldBlacklist: []
     environment: NETHER
     seed: '9000078390451079882'
+    generator: 'null'
+    playerLimit: '-1'
+    allowFlight: 'true'
+  Skyland:
+    ==: MVWorld
+    hidden: 'false'
+    alias: ''
+    color: WHITE
+    style: NORMAL
+    pvp: 'true'
+    scale: '1.0'
+    respawnWorld: ''
+    allowWeather: 'true'
+    difficulty: HARD
+    spawning:
+      ==: MVSpawnSettings
+      animals:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+      monsters:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+    entryfee:
+      ==: MVEntryFee
+      amount: '0.0'
+    hunger: 'true'
+    autoHeal: 'true'
+    adjustSpawn: 'false'
+    portalForm: ALL
+    gameMode: ADVENTURE
+    keepSpawnInMemory: 'false'
+    spawnLocation:
+      ==: MVSpawnLocation
+      x: 0.0
+      y: 124.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+    autoLoad: 'true'
+    bedRespawn: 'false'
+    worldBlacklist: []
+    environment: NORMAL
+    seed: '-468226452'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
@@ -124,7 +171,7 @@ worlds:
     adjustSpawn: 'false'
     portalForm: ALL
     gameMode: SURVIVAL
-    keepSpawnInMemory: 'false'
+    keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
       x: 0.0
@@ -146,11 +193,10 @@ worlds:
     alias: ''
     color: WHITE
     style: NORMAL
-    pvp: 'true'
+    pvp: 'false'
     scale: '1.0'
     respawnWorld: ''
     allowWeather: 'true'
-    difficulty: EASY
     spawning:
       ==: MVSpawnSettings
       animals:
@@ -168,22 +214,17 @@ worlds:
       amount: '0.0'
     hunger: 'true'
     autoHeal: 'true'
-    adjustSpawn: 'false'
+    adjustSpawn: 'true'
     portalForm: ALL
-    gameMode: ADVENTURE
+    gameMode: SURVIVAL
     keepSpawnInMemory: 'false'
     spawnLocation:
-      ==: MVSpawnLocation
-      x: 0.0
-      y: 100.0
-      z: 0.0
-      pitch: 0.0
-      yaw: 0.0
+      ==: MVNullLocation (It's a bug if you see this in your config file)
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
-    environment: NORMAL
-    seed: '9000000000043861106'
+    environment: 'null'
+    seed: '0'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
