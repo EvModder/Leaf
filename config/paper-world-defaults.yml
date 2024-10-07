@@ -20,14 +20,19 @@ anticheat:
     hidden-blocks:
     - copper_ore
     - deepslate_copper_ore
+    - raw_copper_block
     - gold_ore
     - deepslate_gold_ore
     - iron_ore
     - deepslate_iron_ore
+    - raw_iron_block
     - coal_ore
     - deepslate_coal_ore
     - lapis_ore
     - deepslate_lapis_ore
+    - mossy_cobblestone
+    - obsidian
+    - chest
     - diamond_ore
     - deepslate_diamond_ore
     - redstone_ore
@@ -36,6 +41,7 @@ anticheat:
     - emerald_ore
     - deepslate_emerald_ore
     - ancient_debris
+    - ender_chest
     lava-obscures: false
     max-block-height: 64
     replacement-blocks:
@@ -143,29 +149,29 @@ entities:
     despawn-range-shape: ELLIPSOID
     despawn-ranges:
       ambient:
-        hard: 128
-        soft: 32
+        hard: default
+        soft: default
       axolotls:
-        hard: 128
-        soft: 32
+        hard: default
+        soft: default
       creature:
-        hard: 128
-        soft: 32
+        hard: default
+        soft: default
       misc:
-        hard: 128
-        soft: 32
+        hard: default
+        soft: default
       monster:
-        hard: 128
-        soft: 32
+        hard: default
+        soft: default
       underground_water_creature:
-        hard: 128
-        soft: 32
+        hard: default
+        soft: default
       water_ambient:
-        hard: 64
-        soft: 32
+        hard: default
+        soft: default
       water_creature:
-        hard: 128
-        soft: 32
+        hard: default
+        soft: default
     disable-mob-spawner-spawn-egg-transformation: false
     duplicate-uuid:
       mode: SAFE_REGEN
@@ -285,18 +291,16 @@ misc:
   disable-relative-projectile-velocity: false
   disable-sprint-interruption-on-attack: false
   light-queue-size: 20
-  max-leash-distance: 10.0
+  max-leash-distance: default
   redstone-implementation: ALTERNATE_CURRENT
   shield-blocking-delay: 5
   show-sign-click-command-failure-msgs-to-player: false
   update-pathfinding-on-block-update: true
 scoreboards:
-  allow-non-player-entities-on-scoreboards: false
+  allow-non-player-entities-on-scoreboards: true
   use-vanilla-world-scoreboard-name-coloring: true
 spawn:
-  allow-using-signs-inside-spawn-protection: true
-  keep-spawn-loaded: false
-  keep-spawn-loaded-range: 10
+  allow-using-signs-inside-spawn-protection: false
 tick-rates:
   behavior:
     villager:

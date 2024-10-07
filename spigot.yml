@@ -1,25 +1,24 @@
-# This is the main configuration file for Spigot.
-# As you can see, there's tons to configure. Some options may impact gameplay, so use
-# with caution, and make sure you know what each option does before configuring.
 # For a reference for any variable inside this file, check out the Spigot wiki at
 # http://www.spigotmc.org/wiki/spigot-configuration/
-#
-# If you need help with the configuration or have any questions related to Spigot,
-# join us at the Discord or drop by our forums and leave a post.
-#
 # Discord: https://www.spigotmc.org/go/discord
-# Forums: http://www.spigotmc.org/
 
+messages:
+  whitelist: YOU - SHALL NOT - PASS (temporary whitelist)
+  unknown-command: Unknown command brah. Try "/help"
+  server-full: Sorry, server is full!
+  outdated-client: Outdated client! Please use {0}
+  outdated-server: Server not yet updated! For now, please login using {0}
+  restart: Restarting... &4&k|&7-&6&k|&7-&e&k|&7-&2&k|&7-&1&k|&7-&d&k|&7-&5&k|
 settings:
-  debug: false
-  sample-count: 12
   bungeecord: true
-  player-shuffle: 0
-  user-cache-size: 1000
+  late-bind: true
   save-user-cache-on-stop-only: false
-  moved-wrongly-threshold: 0.0625
-  moved-too-quickly-multiplier: 10.0
-  timeout-time: 120
+  sample-count: 16
+  player-shuffle: 12000
+  user-cache-size: 1000
+  moved-wrongly-threshold: 0.0725
+  moved-too-quickly-multiplier: 50.0
+  timeout-time: 300
   restart-on-crash: true
   restart-script: ./silent_run.sh
   netty-threads: 4
@@ -34,20 +33,11 @@ settings:
       max: 2048.0
   log-villager-deaths: false
   log-named-deaths: false
-messages:
-  whitelist: YOU - SHALL NOT - PASS (temporary whitelist)
-  unknown-command: Unknown command brah. Try "/help"
-  server-full: Sorry server is full!
-  outdated-client: Outdated client! Please use version {0}
-  outdated-server: Server not yet updated! For now, please login using {0}
-  restart: Restarting... &4&k|&7-&6&k|&7-&e&k|&7-&2&k|&7-&1&k|&7-&d&k|&7-&5&k|
-advancements:
-  disable-saving: false
-  disabled:
-  - minecraft:story/disabled
-players:
-  disable-saving: false
+  debug: false
 commands:
+  tab-complete: 0
+  send-namespaced: true
+  log: true
   spam-exclusions:
   - /skill
   silent-commandblock-console: true
@@ -56,26 +46,37 @@ commands:
   - summon
   - testforblock
   - tellraw
-  log: true
-  tab-complete: 0
-  send-namespaced: true
+advancements:
+  disable-saving: false
+  disabled:
+  - minecraft:story/disabled
+players:
+  disable-saving: false
+config-version: 12
+stats:
+  disable-saving: false
+  forced-stats: {}
 world-settings:
   default:
-    unload-frozen-chunks: false
-    seed-trialchambers: default
-    seed-trailruins: default
-    seed-ancientcity: default
-    seed-buriedtreasure: default
-    seed-mineshaft: default
-    hopper-can-load-chunks: true
     below-zero-generation-in-existing-chunks: true
-    verbose: false
+    view-distance: default
+    simulation-distance: default
+    thunder-chance: 100000
     merge-radius:
-      exp: 0.0
       item: 0.5
+      exp: -1.0
+    mob-spawn-range: 8
+    item-despawn-rate: 6000
+    arrow-despawn-rate: 12000
+    trident-despawn-rate: 1200
+    zombie-aggressive-towards-villager: true
+    nerf-spawner-mobs: false
+    enable-zombie-pigmen-portal-spawns: true
+    wither-spawn-sound-radius: 0
+    end-portal-sound-radius: 0
+    hanging-tick-frequency: 200
+    unload-frozen-chunks: false
     growth:
-      torchflower-modifier: 100
-      pitcherplant-modifier: 100
       cactus-modifier: 100
       cane-modifier: 100
       melon-modifier: 100
@@ -85,6 +86,7 @@ world-settings:
       beetroot-modifier: 100
       carrot-modifier: 100
       potato-modifier: 100
+      torchflower-modifier: 100
       wheat-modifier: 100
       netherwart-modifier: 100
       vine-modifier: 100
@@ -96,6 +98,7 @@ world-settings:
       weepingvines-modifier: 100
       cavevines-modifier: 100
       glowberry-modifier: 100
+      pitcherplant-modifier: 100
     entity-activation-range:
       animals: 160
       monsters: 160
@@ -123,16 +126,17 @@ world-settings:
       tick-inactive-villagers: true
       ignore-spectators: true
     entity-tracking-range:
-      display: 160
       players: 160
       animals: 160
       monsters: 160
       misc: 160
+      display: 160
       other: 160
     ticks-per:
       hopper-transfer: 8
       hopper-check: 1
     hopper-amount: 1
+    hopper-can-load-chunks: true
     dragon-death-sound-radius: 0
     seed-village: 10387312
     seed-desert: 14357617
@@ -149,6 +153,11 @@ world-settings:
     seed-mansion: 10387319
     seed-fossil: 14357921
     seed-portal: 34222645
+    seed-ancientcity: 20083232
+    seed-trailruins: 83469867
+    seed-trialchambers: 94251327
+    seed-buriedtreasure: 10387320
+    seed-mineshaft: default
     seed-stronghold: default
     hunger:
       jump-walk-exhaustion: 0.05
@@ -162,22 +171,6 @@ world-settings:
     max-tick-time:
       tile: 30
       entity: 30
-    item-despawn-rate: 6000
-    view-distance: default
-    simulation-distance: default
-    thunder-chance: 100000
-    enable-zombie-pigmen-portal-spawns: true
-    wither-spawn-sound-radius: 0
-    arrow-despawn-rate: 1200
-    trident-despawn-rate: 1200
-    hanging-tick-frequency: 100
-    zombie-aggressive-towards-villager: true
-    nerf-spawner-mobs: false
-    mob-spawn-range: 8
-    end-portal-sound-radius: 0
+    verbose: false
   worldeditregentempworld:
     verbose: false
-config-version: 12
-stats:
-  disable-saving: false
-  forced-stats: {}

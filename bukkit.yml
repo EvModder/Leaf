@@ -1,7 +1,7 @@
+# For a reference for any variable inside this file, check out the Bukkit Wiki at
+# https://www.spigotmc.org/go/bukkit-yml
+
 settings:
-  compatibility:
-    allow-old-keys-in-registry: false
-  use-map-color-cache: true
   allow-end: true
   warn-on-overload: true
   permissions-file: logs/permissions.yml
@@ -12,6 +12,7 @@ settings:
   deprecated-verbose: default
   shutdown-message: Server closed  §4§k|§7•§6§k|§7•§e§k|§7•§2§k|§7•§1§k|§7•§d§k|§7•§5§k|
   minimum-api: none
+  use-map-color-cache: true
 spawn-limits:
   monsters: 70
   animals: 10

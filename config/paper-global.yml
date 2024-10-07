@@ -18,17 +18,6 @@ block-updates:
   disable-mushroom-block-updates: false
   disable-noteblock-updates: false
   disable-tripwire-updates: false
-chunk-loading:
-  autoconfig-send-distance: true
-  enable-frustum-priority: false
-  global-max-chunk-load-rate: -1.0
-  global-max-chunk-send-rate: -1.0
-  global-max-concurrent-loads: 500.0
-  max-concurrent-sends: 2
-  min-load-radius: 2
-  player-max-chunk-load-rate: -1.0
-  player-max-concurrent-loads: 20.0
-  target-player-chunk-send-rate: 100.0
 chunk-loading-advanced:
   auto-config-send-distance: true
   player-max-concurrent-chunk-generates: 0
@@ -81,9 +70,8 @@ misc:
   client-interaction-leniency-distance: default
   compression-level: default
   fix-entity-position-desync: false
-  lag-compensate-block-breaking: true
   load-permissions-yml-before-plugins: true
-  max-joins-per-tick: 3
+  max-joins-per-tick: 5
   region-file-cache-size: 256
   strict-advancement-dimension-check: false
   use-alternative-luck-formula: false
@@ -108,13 +96,13 @@ proxies:
   proxy-protocol: false
   velocity:
     enabled: false
-    online-mode: false
+    online-mode: true
     secret: ''
 scoreboards:
-  save-empty-scoreboard-teams: false
+  save-empty-scoreboard-teams: true
   track-plugin-scoreboards: false
 spam-limiter:
-  incoming-packet-threshold: 500
+  incoming-packet-threshold: 600
   recipe-spam-increment: 1
   recipe-spam-limit: 400
   tab-spam-increment: 1
@@ -130,7 +118,7 @@ timings:
   history-interval: 300
   history-length: 3600
   really-enabled: false
-  server-name: Unknown Server
+  server-name: Leaf
   server-name-privacy: false
   url: https://timings.aikar.co/
   verbose: true
