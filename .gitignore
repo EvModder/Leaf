@@ -30,6 +30,8 @@ version_history.json
 #========== Plugin misc
 plugins/Updater/
 plugins/bStats/
+plugins/spark/
+plugins/.paper-remapped/
 
 plugins/Essentials/upgrades-done.yml
 plugins/Essentials/userdata/
