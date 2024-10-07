@@ -6,6 +6,12 @@
     "bypassesPlayerLimit": true
   },
   {
+    "uuid": "0e314b60-29c7-4e35-bef3-3c652c8fb467",
+    "name": "EvModder",
+    "level": 1,
+    "bypassesPlayerLimit": false
+  },
+  {
     "uuid": "2e48d5f1-fb0e-4048-8468-0738a3ec07b8",
     "name": "KlayADR",
     "level": 4,
