@@ -24,6 +24,8 @@ settings:
   restart-script: ./silent_run.sh
   netty-threads: 4
   attribute:
+    maxAbsorption:
+      max: 2048.0
     maxHealth:
       max: 2048.0
     movementSpeed:
@@ -59,6 +61,7 @@ commands:
   send-namespaced: true
 world-settings:
   default:
+    unload-frozen-chunks: false
     seed-trialchambers: default
     seed-trailruins: default
     seed-ancientcity: default
