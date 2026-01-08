@@ -1,5 +1,4 @@
-# For a reference for any variable inside this file, check out the Bukkit Wiki at
-# https://www.spigotmc.org/go/bukkit-yml
+# File Reference: https://docs.papermc.io/paper/reference/bukkit-configuration/
 
 settings:
   allow-end: true
