@@ -85,6 +85,7 @@ entities:
   behavior:
     allow-spider-world-border-climbing: true
     baby-zombie-movement-modifier: 0.5
+    cooldown-failed-beehive-releases: true
     disable-chest-cat-detection: false
     disable-creeper-lingering-effect: false
     disable-player-crits: false
@@ -127,7 +128,6 @@ entities:
     spawner-nerfed-mobs-should-jump: false
     zombie-villager-infection-chance: default
     zombies-target-turtle-eggs: true
-  entities-target-with-follow-range: false
   markers:
     tick: true
   mob-effects:
@@ -172,6 +172,9 @@ entities:
       water_creature:
         hard: default
         soft: default
+    despawn-time:
+      llama_spit: disabled
+      snowball: disabled
     disable-mob-spawner-spawn-egg-transformation: false
     duplicate-uuid:
       mode: SAFE_REGEN
@@ -226,7 +229,6 @@ entities:
 environment:
   disable-explosion-knockback: false
   disable-ice-and-snow: false
-  disable-teleportation-suffocation-check: true
   disable-thunder: false
   fire-tick-delay: 30
   frosted-ice:
@@ -290,7 +292,7 @@ misc:
   disable-end-credits: false
   disable-relative-projectile-velocity: false
   disable-sprint-interruption-on-attack: false
-  light-queue-size: 20
+  legacy-ender-pearl-behavior: false
   max-leash-distance: default
   redstone-implementation: ALTERNATE_CURRENT
   shield-blocking-delay: 5

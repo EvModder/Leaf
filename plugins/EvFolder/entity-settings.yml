@@ -1,0 +1,86 @@
+# All settings in this file can be applied per-EntityType (or subtype)
+# Use 'default' or 'unknown' to modify a setting for all entities which
+# do not have it specifically overriden
+
+# How to announce beheadings, options are GLOBAL, LOCAL, DIRECT, or OFF
+behead-announcement:
+  default: 'LOCAL'
+  player: 'GLOBAL'
+#  wither_skeleton: 'OFF'
+
+# Whether to drop heads if not killed by a player
+drop-for-nonplayer-kills:
+  default: false
+  creaking: true
+
+# Only applies for entities that must be killed by a player
+# Any entity damaged by a player within the threshold can drop a head
+drop-for-indirect-player-kills: false
+indirect-kill-threshold: '30s'
+
+# Whether to drop heads if killed by a projectile weapon
+drop-for-ranged-kills: false
+
+# Drop chances are multiplied by this number for each level of looting
+looting-multiplier: 1.1
+
+# This number is added to the drop chance for each level of looting
+looting-addition: 0.0
+
+# Require specific hand-held items in order to get head drops
+# If this list is empty, any weapon can be used to get heads
+require-weapon: []
+
+# How the head item from a beheading should be handled, options are:
+# EVENT - add the head to normally dropped loot,
+# SPAWN - spawn the head separately from the event,
+# SPAWN_RANDOM - same as SPAWN, but with random velocity on the item entity
+# PLACE - place the head on the ground if spot is available (within 3 blocks)
+# PLACE_BY_KILLER - same as PLACE but checks if killer has build permissions
+# PLACE_BY_VICTIM - same as PLACE but checks if victim has build permissions
+# GIVE - try to put the head directly into the killer's inventory
+# You can do multiple of these in a list; i.e., ['GIVE', 'SPAWN'] will try to
+# give a head to the killer, but will drop the item if their inventory is full
+head-item-drop-mode: ['EVENT', 'SPAWN_RANDOM']
+
+# Give specific hand-held items a modified chance of beheading
+# The number seen is a multiplier for the drop chance when using that weapon
+# Eg: 2 = twice as likely, 1.5 = 50% more likely, 0.1 = 10% as likely
+weapon-multipliers:
+  default:
+    AIR: 2
+    SHEARS: 2
+    GOLDEN_AXE: 2
+    NETHERITE_AXE: 1.6
+    DIAMOND_AXE: 1.5
+    IRON_AXE: 1.4
+    STONE_AXE: 1.3
+    WOODEN_AXE: 1.2
+    DIAMOND_SWORD: 1.2
+    IRON_SWORD: 1.1
+
+# Modify behead chance based on how long a mob has been alive
+# Format is `X: V`, where if the mob has been alive for X or more time, then
+# the drop rate is multiplied by V (similar to weapon-multipliers)
+# Default unit is ticks, other units: s[ec], m[in], h[r], d[ay], w[eek], y[r]
+time-alive-multipliers:
+  # Example: this will prevent player beheads if they have been alive < 1min
+  player:
+    0s: 0.0
+    1m: 1.0
+  # Example: for all other mobs, this will make heads more common as they age
+  default:
+    3h: 1.1
+    2d: 2.0
+    1w: 3.0
+    30w6d11h55m33s: 10.0
+
+
+# Modify drop chance with custom permissions
+# Any player(s) with these permission will have the modified droprate
+permission-multipliers:
+   default: ~
+#  player:
+#    dropheads.unlucky_pvper: 0.1
+#  'sheep|pink':
+#    dropheads.double_pink_sheep_dropchance: 2.0

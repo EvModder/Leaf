@@ -7,7 +7,7 @@ settings:
   permissions-file: logs/permissions.yml
   update-folder: ../logs/update
   plugin-profiling: false
-  connection-throttle: 4000
+  connection-throttle: -1
   query-plugins: true
   deprecated-verbose: default
   shutdown-message: Server closed  §4§k|§7•§6§k|§7•§e§k|§7•§2§k|§7•§1§k|§7•§d§k|§7•§5§k|
