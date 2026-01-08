@@ -25,10 +25,9 @@ head-type-in-lore:
 # The display name format used when creating head items
 # You can add other entity types here if you want
 head-name-format:
+  player: "block.minecraft.player_head.named" # Translates to "PlayerName's Head"
   default: "${MOB_SUBTYPES_DESC}${MOB_TYPE} ${HEAD_TYPE}"
-  player: "${NAME} Head"
-  #player: "block.minecraft.player_head.named" # Translates to "PlayerName's Head"
-  giant: "${MOB_SUBTYPES_DESC}${MOB_TYPE}'s Toe"
+  giant: "${MOB_TYPE}'s Toe"
 
 # Used when 'head-click-listener' is enabled in and a head is clicked
 head-click-format-players: "&7[&6DropHeads&7]&f That's ${NAME}'s Head"
@@ -91,12 +90,12 @@ entity-subtype-names:
   librarian: "entity.minecraft.villager.librarian"          #Villager/ZombieVillager
   mason: "entity.minecraft.villager.mason"                  #Villager/ZombieVillager
   nitwit: "entity.minecraft.villager.nitwit"                #Villager/ZombieVillager
-  shepherd: "entity.minecraft.villager.none"                #Villager/ZombieVillager
+  none: "entity.minecraft.villager.none"                    #Villager/ZombieVillager
   shepherd: "entity.minecraft.villager.shepherd"            #Villager/ZombieVillager
   toolsmith: "entity.minecraft.villager.toolsmith"          #Villager/ZombieVillager
   weaponsmith: "entity.minecraft.villager.weaponsmith"      #Villager/ZombieVillager
-  blue: "color.minecraft.blue"                              #Axolotl
-  cyan: color.minecraft.cyan"                               #Axolotl
+  blue: "color.minecraft.blue"                              #Axolotl/Shulker/Sheep/Parrot
+  cyan: "color.minecraft.cyan"                              #Axolotl/Shulker/Sheep/Parrot
   gold: "color.minecraft.yellow"                            #Axolotl
   lucy: "color.minecraft.pink"                              #Axolotl
   wild: "color.minecraft.brown"                             #Axolotl
@@ -105,9 +104,7 @@ entity-subtype-names:
   sideways: "Sideways"                                      #Shulker
   upside_down: "Upside Down"                                #Shulker
   black: "color.minecraft.black"                            #Shulker/Sheep/Horse/Cat/Rabbit
-  blue: "color.minecraft.blue"                              #Shulker/Sheep/Parrot
   brown: "color.minecraft.brown"                            #Shulker/Sheep/Horse/Llama/TraderLlama/Rabbit/MushroomCow/Panda
-  cyan: "color.minecraft.cyan"                              #Shulker/Sheep/Parrot
   gray: "color.minecraft.gray"                              #Shulker/Sheep/Parrot/Horse/Llama/TraderLlama
   green: "color.minecraft.green"                            #Shulker/Sheep/Parrot
   light_blue: "color.minecraft.light_blue"                  #Shulker/Sheep
@@ -177,6 +174,7 @@ commands:
       head-not-found: "&cHead \"%s%s\" not found"
       giveto-not-found: "&cCould not find head recipient: %s"
       invalid-slot: "&cInvalid inventory slot: %s"
+      invalid-amount: "&cInvalid amount: %s"
       slot-unavailable:
         self: "&cYou do not have ${commands.spawnhead.prefixes.slot}%s available"
         target: "&c%s does not have ${commands.spawnhead.prefixes.slot}%s available"
@@ -188,19 +186,25 @@ commands:
       too-many-matching-entities: "&cToo many entities selected (&6%s&c)"
     success:
       has-data-value: "&7Getting entity head with data value: %s"
-      item-with-amount-format: "%s&fx%s"
       spawned-head: "&aSpawned Head: &e%s"
       spawned-heads: "&aSpawned Heads: [&e%s&a]"
       gave-head: "&aGave &e%s&a to &7%s"
       gave-heads: "&aGave: [&e%s&a] to &7%s"
       multi-gave-head: "&aGave &e%s&a to [&7%s&a]"
       multi-gave-heads: "&aGave: [&e%s&a] to [&7%s&a]"
+      list-sep: ", "
+      item-with-amount-format: "%s&fx%s"
 
   droprate:
     not-found: "&6Drop chance for \"&c%s&6\" not found! &7(defaults to &b0%%&7)"
     raw-drop-rate-for: "&6Drop chance for &e%s&6: &b%s%%"
+    unknown-entity: "&cUnknown head type: \"&6%s&6\""
+    input-rate-invalid: "&cDrop chance must be between &b0.0&c and &b1.0"
+    rate-not-changed: "&cDrop chance for &e%s&c is already set to &b%s%%"
+    rate-changed: "&aDrop chance for &e%s&a updated from &b%s%% &ato &b%s%%"
+    file-updated: "&7head-drop-rates.txt file modified: %b"
     restrictions:
-      header: "§7Drop restrictions:"
+      header: "&7Drop restrictions:"
       victim-must-have-perm: "\n&c&l>&7 Victim must have the '&cdropheads.canlosehead&7' perm"
       killer-must-have-perm: "\n&c&l>&7 You must have the '&cdropheads.canbehead&7' perm"
       always-behead-perm: "\n&c&l>&7 You have '&cdropheads.alwaysbehead&7' so droprate is &b100%"
@@ -212,6 +216,7 @@ commands:
       weapon-type: "&fWeapon"
       perms: "&fPerms"
       looting: "${enchantment.minecraft.looting}"
+    list-sep: "&7, "
     vanilla-wither-skeleton-handling-alert: "&7Vanilla wither_skeleton handling is enabled"
     final-drop-rate: "&6Final drop chance: &b%s%%"
 
@@ -221,6 +226,12 @@ commands:
     disabled: "${addServer.resourcePack.disabled}" #Alternative: gui.no
     errors:
       run-by-player: "&cOnly ingame players can run this command"
+
+
+# Translation-fallback keys (1.19.4+):
+# entity_subtype.X, head_type.head, head_type.skull, head_type.toe
+# WIP: death.attack.behead, death.attack.behead.player, death.attack.behead.player.item
+
 
 
 # Translations for EvStats

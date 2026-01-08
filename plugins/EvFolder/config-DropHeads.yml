@@ -1,12 +1,6 @@
-# How to announce beheadings, options are GLOBAL, LOCAL, DIRECT, or OFF
-# To customize per killed entity type, use `entity_type: 'MODE'`
-behead-announcement:
-  default: 'LOCAL'
-  player: 'GLOBAL'
-#  wither_skeleton: 'OFF'
-
 # Announcement mode for players with the 'dropheads.silentbehead' permission
-# Overrides the above setting; it is recommended to use 'DIRECT' or 'OFF'
+# Overrides behead-announcement in entity-settings.yml
+# it is recommended to use 'DIRECT' or 'OFF' here
 silentbehead-announcement: OFF
 
 # How far 'LOCAL' broadcasts can be heard
@@ -24,33 +18,9 @@ behead-announcement-replaces-player-death-event-message: false
 # Replace death message sent to the owner of a pet when it is beheaded
 behead-message-replaces-pet-death-message: true
 
-# Whether to drop heads if not killed by a player
-drop-for-nonplayer-kills: false
-
-# Whether to drop heads if killed by a projectile weapon
-drop-for-ranged-kills: false
-
-# In vanilla, the main-hand item is used for looting even if shot from offhand
-use-ranged-weapon-for-looting: true
-
-# Whether to drop heads if last-damage-cause is not a valid entity
-drop-for-indirect-kills: false
-indirect-kill-threshold: '30s'
-
-# Only drop player heads (you can also do this in 'head-drop-rates.txt'
-# by making all mobs except players have a 0% chance of dropping heads)
-player-heads-only: false
-
 # Only drop "simple" mob heads (one per EntityType), without any unique
 # texture features based on mob traits or subtype
 simple-mob-heads-only: false
-
-# Use pre-JAPPA style heads, from before the Minecraft 1.14 texture update
-# https://minecraft.fandom.com/wiki/Texture_Update
-use-legacy-head-textures: false
-
-# Use the pre-1.19.3 vex texture for its head (smaller eyebrows, big mouth)
-use-1.19.2-vex-head-textures: false
 
 # Whether to keep entity heads updated with the latest vanilla textures
 refresh-textures: true
@@ -69,7 +39,7 @@ update-on-skin-change: false
 # Note: Currently only affects custom (non-vanilla) heads
 make-heads-unstackable: false
 
-# Track mob spawn reasons, edits drop rates using 'spawn-cause-modifiers.txt'
+# Track mob spawn reasons, edits drop rates using 'spawn-cause-multipliers.txt'
 track-mob-spawns: true
 
 # Enable the mechanic where the first mob killed by a charged creeper's
@@ -96,7 +66,7 @@ drop-saddled-heads: false
 hollow-skeletal-skulls: false
 
 # Should slimes drop semi-transparent heads, similar to their ingame model?
-# Note: This relies on HD textures, which Mojang might patch
+# Note: This relies on HD textures, which Mojang doesn't always permit
 transparent-slime-heads: false
 
 # Enable plugin auto-updates (checks for new versions and head textures)
@@ -110,15 +80,11 @@ update-textures: true
 # Run in debug mode (prints extra information to console)
 debug-messages: false
 
-# Whether players will be able allowed to place heads as blocks
-# unless they are given the 'dropheads.canplacehead' permission
-prevent-head-placement: false
-prevent-head-placement-message: '&7[&6DropHeads&7]&c No permission to place head blocks'
-
 # Shows information about a head when right-clicked by a player
 # Note: The output head-click-info can be configured in translate.yml
 head-click-listener: true
-head-click-max-rate-in-ticks: 10
+# Set to 0 for no limit on head click message frequency
+head-click-max-rate-in-ticks: 5
 
 # Saves lore of heads in GameProfile when placed (used by some other plugins)
 # Only works for player-type heads, eg: won't work for minecraft:creeper_head
@@ -138,15 +104,6 @@ show-head-type-in-lore: true
 # WARNING: This feature is in EARLY-BETA and may not end up being supported
 substitute-dropheads-in-give-command: true
 
-# Only drop heads if the killer used an axe; overrides 'must-use'
-must-use-axe: false
-
-# Drop chances are multiplied by this number for each level of looting
-looting-multiplier: 1.1
-
-# This number is added to the drop chance for each level of looting
-looting-addition: 0.0
-
 # Defer wither skeleton skull handling to vanilla Minecraft
 # This bypasses 'head-drop-rates.txt', custom looting multiplier/addition,
 # 'must-use-axe', 'drop-for-nonplayer-kills', and other DropHeads settings
@@ -160,6 +117,10 @@ update-zombie-pigman-heads: true
 # Requires 'refresh-textures' to also be set to true.
 update-piglin-heads: true
 
+# Updates internal texture keys for mob heads when refreshed
+# Can improve stacking for legacy heads (from older versions of the plugin)
+replace-redirected-texture-keys: false
+
 # Whether to use material types for zombie, creeper, skeleton & wither skulls
 # If this is false, all heads will be forced to use the player_head type
 prefer-vanilla-heads: true
@@ -169,78 +130,42 @@ prefer-vanilla-heads: true
 cracked-iron-golem-heads: false
 
 # Whether to replace the noteblock sound with the ambient mob sound when the
-# noteblock played has a custom mob head on top of it
-noteblock-mob-sounds: true
+# noteblock played has a custom mob head on top of it, options are:
+# OFF - no custom noteblock sounds
+# LISTENER - sounds are chosen when a noteblock event occurs (recommended)
+# ITEM_META - custom sounds are encoded into every head item's NBT
+noteblock-mob-sounds: 'OFF'
 
 # A list of mob heads a player can wear to avoid provoking endermen
 endermen-camouflage-heads: []
 
-# How the head item from a beheading should be handled, options are:
-# EVENT - add the head to normally dropped loot,
-# SPAWN - spawn the head separately from the event,
-# PLACE - place the head on the ground if spot is available (within 3 blocks)
-# PLACE_BY_KILLER - same as PLACE but checks if killer has build permissions
-# PLACE_BY_VICTIM - same as PLACE but checks if victim has build permissions
-# GIVE - try to put the head directly into the killer's inventory
-# You can do multiple of these in a list; i.e., ['GIVE', 'SPAWN'] will try to
-# give a head to the killer, but will drop the item if their inventory is full
-head-item-drop-mode: 'EVENT'
-
-head-place-overwrite-blocks: ['AIR', 'WATER', 'GRASS']
-
-# (Optional) Require using listed hand-held items in order to get head drops
-# If this list is empty, any weapon can be used to get heads
-must-use:
-#  - IRON_SWORD
-#  - DIAMOND_AXE
-#  - WOODEN_HOE
-
-# (Optional) Give listed hand-held items a different chance of beheading
-# The number is multiplier in drop chance when using the given tool
-# Eg: 2.0 = twice as likely, 1.5 = 50% more likely, 0.1 = 10% as likely, etc.
-specific-tool-multipliers:
-  AIR: 2
-  SHEARS: 2
-  GOLDEN_AXE: 2
-  NETHERITE_AXE: 1.6
-  DIAMOND_AXE: 1.5
-  IRON_AXE: 1.4
-  STONE_AXE: 1.3
-  WOODEN_AXE: 1.2
-  DIAMOND_SWORD: 1.2
-  IRON_SWORD: 1.1
-
-# (Optional) Modify behead chance based on how long a mob type has been alive
-# Format is `X: V`, where if the mob has been alive for X or more time, then
-# the drop rate is multiplied by V similar to specific-tool-multipliers)
-# Default unit is ticks; other units: s[ec], m[in], h[r], d[ay], w[eek], y[r]
-time-alive-multipliers:
-  # This example will prevent player beheads if they have been alive < 1min
-  player:
-    0s: 0.0
-    1m: 1.0
-  # For all other mob types, this will make heads more common for older mobs
-  default:
-    3h: 1.1
-    2d: 2.0
-    1w: 3.0
-    30w6d11h55m33s: 10.0
-
-# Set drop chance multipliers for custom permission groups
-custom-droprate-multiplier-permissions:
-#  dropheads.group.droprate2x: 2.0
-#  dropheads.group.droprate150percent: 1.5
+# Only used when 'head-item-drop-mode' = 'PLACE' in entity-settings.yml
+# Controls what blocks heads can be placed in
+head-place-overwrite-blocks: ['AIR', 'WATER', 'SHORT_GRASS']
 
 # Changes the death `Event Priority` that DropHeads registers at
 # Low values => DropHeads runs BEFORE other plugins; high values => runs AFTER
 # Possible values: [LOWEST, LOW, NORMAL, HIGH, HIGHEST, MONITOR]
 death-listener-priority: LOW
 
+# In vanilla, the main-hand item is used for looting even if shot from offhand
+use-ranged-weapon-for-looting: true
+
 # Attempt to replace headA with headB whenever possible (server-wide)
 # The head on the left is replaced with the one on the right when updated
 replace-heads:
   'PIG_ZOMBIE': 'ZOMBIFIED_PIGLIN'
-#  'ILLUSIONER': 'VILLAGER|FLETCHER|SWAMP'
+#  'WOLF': 'WOLF|PALE'
+#  'WOLF|GRUMM': 'WOLF|PALE|GRUMM'
+
+# Forcibly assign a DropHeads mob type (id) for heads with a matching texture
+assign-dropheads-keys-to-recognized-textures: false
+
+# Similar to the above setting, but more effect (much higher performance cost)
+assign-dropheads-keys-to-recognized-uuids: false
+
+# Whether to send usage statistics to bStats
+bstats-enabled: true
 
 # Whether to enable logging for certain events
 # Placeholders: TIMESTAMP, VICTIM(_UUID), KILLER(_UUID), ITEM, SENDER, HEAD.
@@ -254,8 +179,9 @@ log:
   log-head-command: true
   log-head-command-format: '${TIMESTAMP},gethead command,${SENDER},${HEAD}'
 
-# Performance settings, edit at your own risk
+# Performance/internal settings, edit at your own risk
 message-json-limit: 15000
 weapon-tellraw-component-cache-size: 5
+async-offline-profile-requests: false
 head-click-enable-profile-requests: true
 spawnhead-command-entity-select-limit: 100
