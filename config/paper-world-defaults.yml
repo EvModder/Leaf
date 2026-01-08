@@ -8,6 +8,7 @@
 # Configuration options here apply to all worlds, unless you specify overrides inside
 # the world-specific config file inside each world folder.
 # 
+# File Reference: https://docs.papermc.io/paper/reference/world-configuration/
 # Docs: https://docs.papermc.io/
 # Discord: https://discord.gg/papermc
 # Website: https://papermc.io/
@@ -126,6 +127,7 @@ entities:
     player-insomnia-start-ticks: 72000
     should-remove-dragon: false
     spawner-nerfed-mobs-should-jump: false
+    stuck-entity-poi-retry-delay: 200
     zombie-villager-infection-chance: default
     zombies-target-turtle-eggs: true
   markers:
@@ -182,6 +184,7 @@ entities:
     filter-bad-tile-entity-nbt-from-falling-blocks: false
     filtered-entity-tag-nbt-paths: []
     iron-golems-can-spawn-in-air: true
+    max-arrow-despawn-invulnerability: 200
     monster-spawn-max-light-level: default
     non-player-arrow-despawn-rate: default
     per-player-mob-spawns: true
@@ -288,6 +291,7 @@ max-growth-height:
   cactus: 3
   reeds: 3
 misc:
+  allow-remote-ender-dragon-respawning: false
   alternate-current-update-order: HORIZONTAL_FIRST_OUTWARD
   disable-end-credits: false
   disable-relative-projectile-velocity: false
@@ -295,7 +299,6 @@ misc:
   legacy-ender-pearl-behavior: false
   max-leash-distance: default
   redstone-implementation: ALTERNATE_CURRENT
-  shield-blocking-delay: 5
   show-sign-click-command-failure-msgs-to-player: false
   update-pathfinding-on-block-update: true
 scoreboards:

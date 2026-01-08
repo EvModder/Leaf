@@ -8,11 +8,12 @@
 # The world configuration options have been moved inside
 # their respective world folder. The files are named paper-world.yml
 # 
+# File Reference: https://docs.papermc.io/paper/reference/global-configuration/
 # Docs: https://docs.papermc.io/
 # Discord: https://discord.gg/papermc
 # Website: https://papermc.io/
 
-_version: 29
+_version: 31
 anticheat:
   obfuscation:
     items:
@@ -42,7 +43,6 @@ chunk-loading-basic:
   player-max-chunk-load-rate: 100.0
   player-max-chunk-send-rate: 75.0
 chunk-system:
-  gen-parallelism: default
   io-threads: -1
   worker-threads: -1
 collisions:
@@ -84,13 +84,17 @@ misc:
     chat-executor-max-size: -1
   client-interaction-leniency-distance: default
   compression-level: default
-  fix-entity-position-desync: false
+  enable-nether: true
+  fix-far-end-terrain-generation: false
   load-permissions-yml-before-plugins: true
   max-joins-per-tick: 5
+  prevent-negative-villager-demand: false
   region-file-cache-size: 256
+  send-full-pos-for-item-entities: false
   strict-advancement-dimension-check: false
   use-alternative-luck-formula: false
   use-dimension-type-for-custom-spawners: false
+  xp-orb-groups-per-area: default
 packet-limiter:
   all-packets:
     action: DROP
@@ -98,7 +102,7 @@ packet-limiter:
     max-packet-rate: 500.0
   kick-message: <red><lang:disconnect.exceeded_packet_rate>
   overrides:
-    ServerboundPlaceRecipePacket:
+    minecraft:place_recipe:
       action: DROP
       interval: 4.0
       max-packet-rate: 5.0
@@ -143,11 +147,15 @@ unsupported-settings:
   allow-piston-duplication: true
   allow-unsafe-end-portal-teleportation: true
   compression-format: ZLIB
+  oversized-item-component-sanitizer:
+    dont-sanitize: []
   perform-username-validation: true
   simplify-remote-item-matching: false
   skip-tripwire-hook-placement-validation: true
   skip-vanilla-damage-tick-when-shield-blocked: false
-  update-equipment-on-player-actions: true
+  update-equipment-on-player-actions: false
+update-checker:
+  enabled: false
 watchdog:
   early-warning-delay: 10000
   early-warning-every: 5000
