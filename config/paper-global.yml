@@ -145,7 +145,7 @@ unsupported-settings:
   compression-format: ZLIB
   perform-username-validation: true
   simplify-remote-item-matching: false
-  skip-tripwire-hook-placement-validation: false
+  skip-tripwire-hook-placement-validation: true
   skip-vanilla-damage-tick-when-shield-blocked: false
   update-equipment-on-player-actions: true
 watchdog:
